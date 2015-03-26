@@ -19,6 +19,9 @@
 		A072B8431AC4A1B300B08788 /* icon_wallet.png in Resources */ = {isa = PBXBuildFile; fileRef = A072B8411AC4A1B300B08788 /* icon_wallet.png */; };
 		A072B8441AC4A1B300B08788 /* icon_write.png in Resources */ = {isa = PBXBuildFile; fileRef = A072B8421AC4A1B300B08788 /* icon_write.png */; };
 		A072B8471AC4A1CD00B08788 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A072B8461AC4A1CD00B08788 /* InitialViewController.m */; };
+		A072B8491AC4A47100B08788 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A072B8481AC4A47100B08788 /* StoreKit.framework */; };
+		A072B84B1AC4A48C00B08788 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A072B84A1AC4A48C00B08788 /* LocalAuthentication.framework */; };
+		A072B84D1AC4A66000B08788 /* touch_id_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A072B84C1AC4A66000B08788 /* touch_id_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,10 @@
 		A072B8421AC4A1B300B08788 /* icon_write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_write.png; sourceTree = "<group>"; };
 		A072B8451AC4A1CD00B08788 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		A072B8461AC4A1CD00B08788 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		A072B8481AC4A47100B08788 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A072B84A1AC4A48C00B08788 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		A072B84C1AC4A66000B08788 /* touch_id_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touch_id_icon.png; sourceTree = "<group>"; };
+		A072B84E1AC4AAC100B08788 /* MacrosHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacrosHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A072B84B1AC4A48C00B08788 /* LocalAuthentication.framework in Frameworks */,
+				A072B8491AC4A47100B08788 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +84,8 @@
 		A072B8041AC49AF700B08788 = {
 			isa = PBXGroup;
 			children = (
+				A072B84A1AC4A48C00B08788 /* LocalAuthentication.framework */,
+				A072B8481AC4A47100B08788 /* StoreKit.framework */,
 				A072B80F1AC49AF700B08788 /* ID Keeper */,
 				A072B82C1AC49AF800B08788 /* ID KeeperTests */,
 				A072B80E1AC49AF700B08788 /* Products */,
@@ -95,6 +106,7 @@
 			children = (
 				A072B8401AC4A1A900B08788 /* Images */,
 				A072B83C1AC4A01400B08788 /* Core Data */,
+				A072B84E1AC4AAC100B08788 /* MacrosHelper.h */,
 				A072B8141AC49AF700B08788 /* AppDelegate.h */,
 				A072B8151AC49AF700B08788 /* AppDelegate.m */,
 				A072B81D1AC49AF800B08788 /* Main.storyboard */,
@@ -147,6 +159,7 @@
 		A072B8401AC4A1A900B08788 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A072B84C1AC4A66000B08788 /* touch_id_icon.png */,
 				A072B8201AC49AF800B08788 /* Images.xcassets */,
 				A072B8411AC4A1B300B08788 /* icon_wallet.png */,
 				A072B8421AC4A1B300B08788 /* icon_write.png */,
@@ -203,6 +216,12 @@
 				TargetAttributes = {
 					A072B80C1AC49AF700B08788 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = NHJ9WCNN2Z;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					A072B8281AC49AF800B08788 = {
 						CreatedOnToolsVersion = 6.2;
@@ -239,6 +258,7 @@
 				A072B8241AC49AF800B08788 /* LaunchScreen.xib in Resources */,
 				A072B8211AC49AF800B08788 /* Images.xcassets in Resources */,
 				A072B8431AC4A1B300B08788 /* icon_wallet.png in Resources */,
+				A072B84D1AC4A66000B08788 /* touch_id_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,9 +403,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "ID Keeper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -393,9 +416,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "ID Keeper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

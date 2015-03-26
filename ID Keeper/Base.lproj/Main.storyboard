@@ -16,7 +16,31 @@
                     <view key="view" contentMode="scaleToFill" id="oEK-fk-TA0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9o-dd-yBx">
+                                <rect key="frame" x="234" y="250" width="133" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="9Kz-4n-Y8R"/>
+                                    <constraint firstAttribute="height" constant="100" id="goR-5j-Frv"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="touch_id_icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Touch ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwO-0R-81q">
+                                <rect key="frame" x="238" y="358" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JwO-0R-81q" firstAttribute="top" secondItem="r9o-dd-yBx" secondAttribute="bottom" constant="8" id="0nk-Uy-z9k"/>
+                            <constraint firstAttribute="centerY" secondItem="r9o-dd-yBx" secondAttribute="centerY" id="L6p-lG-jg5"/>
+                            <constraint firstAttribute="centerX" secondItem="JwO-0R-81q" secondAttribute="centerX" constant="-0.5" id="fWm-TL-O6D"/>
+                            <constraint firstAttribute="centerX" secondItem="r9o-dd-yBx" secondAttribute="centerX" constant="-0.5" id="qgn-Bj-04m"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3AU-iP-v1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -45,6 +69,9 @@
                                 <state key="normal" title="Button" image="icon_write.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="button_startNewID:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ypp-mr-Yde"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cc5-oP-8cN">
                                 <rect key="frame" x="200" y="309" width="200" height="200"/>
@@ -56,12 +83,18 @@
                                 <state key="normal" title="Button" image="icon_wallet.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="button_showCurrentIDs:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dSo-dm-eBI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDa-Fb-xtO">
                                 <rect key="frame" x="203" y="550" width="195" height="30"/>
                                 <state key="normal" title="Purchase additional options!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="button_purchaseOptions:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="L6W-Pe-S6Q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -151,5 +184,6 @@
     <resources>
         <image name="icon_wallet.png" width="756" height="756"/>
         <image name="icon_write.png" width="758" height="756"/>
+        <image name="touch_id_icon.png" width="800" height="600"/>
     </resources>
 </document>
