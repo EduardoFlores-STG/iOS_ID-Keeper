@@ -30,11 +30,14 @@
 {
     for (SKPaymentTransaction *transaction in transactions)
     {
+        NSLog(@"description = %@", transaction.description);
+        NSLog(@"transactionIdentifier = %@", transaction.transactionIdentifier);
+        
         switch (transaction.transactionState)
         {
             case SKPaymentTransactionStatePurchased:
                 NSLog(@"in SKPaymentTransactionStatePurchased");
-                [defaults setBool:YES forKey:KEY_IS_TOUCH_ID_PURCHASED];
+                [self checkWhatItemWasPurchased];
                 [defaultQueue finishTransaction:transaction];
                 break;
             case SKPaymentTransactionStateFailed:
@@ -43,7 +46,7 @@
                 break;
             case SKPaymentTransactionStateRestored:
                 NSLog(@"in SKPaymentTransactionStateRestored");
-                [defaults setBool:YES forKey:KEY_IS_TOUCH_ID_PURCHASED];
+                [self checkWhatItemWasPurchased];
                 [defaultQueue restoreCompletedTransactions];
                 break;
             default:
@@ -61,6 +64,24 @@
         product = [arrayOfInAppProducts objectAtIndex:0];   // for now...
         NSLog(@"product Title = %@", product.localizedTitle);
         NSLog(@"product Description = %@", product.localizedDescription);
+    }
+}
+
+- (void) checkWhatItemWasPurchased
+{
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+- (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
+{
+    NSLog(@"received restored transactions: %lu", (unsigned long)queue.transactions.count);
+    for (SKPaymentTransaction *transaction in queue.transactions)
+    {
+        NSString *productID = transaction.payment.productIdentifier;
+        if ([productID isEqualToString:@"com.eduardoflores.IDKeeper.enableTouchID"])
+        {
+            // verified that the purchase was for the touch ID option
+            [defaults setBool:YES forKey:KEY_IS_TOUCH_ID_PURCHASED];
+        }
     }
 }
 
