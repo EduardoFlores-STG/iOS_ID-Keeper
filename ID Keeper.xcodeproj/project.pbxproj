@@ -22,6 +22,7 @@
 		A072B8491AC4A47100B08788 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A072B8481AC4A47100B08788 /* StoreKit.framework */; };
 		A072B84B1AC4A48C00B08788 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A072B84A1AC4A48C00B08788 /* LocalAuthentication.framework */; };
 		A072B84D1AC4A66000B08788 /* touch_id_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A072B84C1AC4A66000B08788 /* touch_id_icon.png */; };
+		A072B8511AC4AF1700B08788 /* PurchaseOptionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A072B8501AC4AF1700B08788 /* PurchaseOptionsVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		A072B84A1AC4A48C00B08788 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		A072B84C1AC4A66000B08788 /* touch_id_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touch_id_icon.png; sourceTree = "<group>"; };
 		A072B84E1AC4AAC100B08788 /* MacrosHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacrosHelper.h; sourceTree = "<group>"; };
+		A072B84F1AC4AF1700B08788 /* PurchaseOptionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseOptionsVC.h; sourceTree = "<group>"; };
+		A072B8501AC4AF1700B08788 /* PurchaseOptionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseOptionsVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 				A072B8101AC49AF700B08788 /* Supporting Files */,
 				A072B8451AC4A1CD00B08788 /* InitialViewController.h */,
 				A072B8461AC4A1CD00B08788 /* InitialViewController.m */,
+				A072B84F1AC4AF1700B08788 /* PurchaseOptionsVC.h */,
+				A072B8501AC4AF1700B08788 /* PurchaseOptionsVC.m */,
 			);
 			path = "ID Keeper";
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 			files = (
 				A072B83F1AC4A02B00B08788 /* CoreDataHelper.m in Sources */,
 				A072B83B1AC4A00400B08788 /* Card.m in Sources */,
+				A072B8511AC4AF1700B08788 /* PurchaseOptionsVC.m in Sources */,
 				A072B8191AC49AF800B08788 /* ID_Keeper.xcdatamodeld in Sources */,
 				A072B8471AC4A1CD00B08788 /* InitialViewController.m in Sources */,
 				A072B8161AC49AF700B08788 /* AppDelegate.m in Sources */,

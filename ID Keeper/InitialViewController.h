@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <StoreKit/StoreKit.h>
+#import "PurchaseOptionsVC.h"
 
-@interface InitialViewController : UIViewController <SKPaymentTransactionObserver, SKProductsRequestDelegate>
+@interface InitialViewController : UIViewController <PurchaseOptionsDelegate, SKPaymentTransactionObserver, SKProductsRequestDelegate>
 {
+    NSUserDefaults *defaults;
+    
     SKPaymentQueue *defaultQueue;
     SKProduct *product;
     BOOL IS_TOUCH_ID_PURCHASED;
+    NSArray *arrayOfInAppProducts;
 }
 
 - (IBAction)button_startNewID:(id)sender;

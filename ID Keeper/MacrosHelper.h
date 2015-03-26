@@ -11,4 +11,6 @@
 
 #define IN_APP_PURCHASE_IDENTIFIER_TOUCH_ID         @"com.eduardoflores.IDKeeper.enableTouchID"
 
+#define KEY_IS_TOUCH_ID_PURCHASED                       @"IS_TOUCH_ID_PURCHASED"
+
 #endif

@@ -3,12 +3,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Purchase OptionsVC-->
         <scene sceneID="FNH-9a-Nhk">
             <objects>
-                <viewController id="IxZ-GQ-Keb" sceneMemberID="viewController">
+                <viewController id="IxZ-GQ-Keb" customClass="PurchaseOptionsVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WFO-HH-IXP"/>
                         <viewControllerLayoutGuide type="bottom" id="xAc-4N-DTq"/>
@@ -18,17 +19,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9o-dd-yBx">
-                                <rect key="frame" x="234" y="250" width="133" height="100"/>
+                                <rect key="frame" x="16" y="250" width="133" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="133" id="9Kz-4n-Y8R"/>
-                                    <constraint firstAttribute="height" constant="100" id="goR-5j-Frv"/>
+                                    <constraint firstAttribute="height" constant="100" id="0OP-Mi-HAl"/>
+                                    <constraint firstAttribute="width" constant="133" id="stY-k2-iE2"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="touch_id_icon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="button_purchaseTouchID:" destination="IxZ-GQ-Keb" eventType="touchUpInside" id="XGb-Yz-oEF"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Touch ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwO-0R-81q">
-                                <rect key="frame" x="238" y="358" width="125" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Touch ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="JwO-0R-81q">
+                                <rect key="frame" x="20" y="358" width="124.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="b5N-n9-gqv">
+                                <rect key="frame" x="157" y="250" width="427" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="wmj-Iq-oGe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -36,12 +49,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JwO-0R-81q" firstAttribute="top" secondItem="r9o-dd-yBx" secondAttribute="bottom" constant="8" id="0nk-Uy-z9k"/>
-                            <constraint firstAttribute="centerY" secondItem="r9o-dd-yBx" secondAttribute="centerY" id="L6p-lG-jg5"/>
-                            <constraint firstAttribute="centerX" secondItem="JwO-0R-81q" secondAttribute="centerX" constant="-0.5" id="fWm-TL-O6D"/>
-                            <constraint firstAttribute="centerX" secondItem="r9o-dd-yBx" secondAttribute="centerX" constant="-0.5" id="qgn-Bj-04m"/>
+                            <constraint firstItem="JwO-0R-81q" firstAttribute="top" secondItem="r9o-dd-yBx" secondAttribute="bottom" constant="8" id="3YN-zp-Igr"/>
+                            <constraint firstAttribute="centerY" secondItem="b5N-n9-gqv" secondAttribute="centerY" id="4Uy-uc-eGU"/>
+                            <constraint firstItem="b5N-n9-gqv" firstAttribute="trailing" secondItem="oEK-fk-TA0" secondAttribute="trailingMargin" id="Kb9-em-pZq"/>
+                            <constraint firstItem="r9o-dd-yBx" firstAttribute="leading" secondItem="oEK-fk-TA0" secondAttribute="leadingMargin" id="Y9q-WR-ES8"/>
+                            <constraint firstItem="b5N-n9-gqv" firstAttribute="leading" secondItem="r9o-dd-yBx" secondAttribute="trailing" constant="8" id="ZJb-aZ-yE3"/>
+                            <constraint firstItem="JwO-0R-81q" firstAttribute="leading" secondItem="oEK-fk-TA0" secondAttribute="leadingMargin" constant="4" id="nN9-aI-0Rb"/>
+                            <constraint firstAttribute="centerY" secondItem="r9o-dd-yBx" secondAttribute="centerY" id="oqa-HL-WgL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label_purchaseDescription" destination="b5N-n9-gqv" id="N6N-UF-mTW"/>
+                        <outlet property="label_purchaseTitle" destination="JwO-0R-81q" id="CwE-kE-jkm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3AU-iP-v1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

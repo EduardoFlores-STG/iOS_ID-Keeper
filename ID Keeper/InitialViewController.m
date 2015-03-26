@@ -15,6 +15,17 @@
 
 @implementation InitialViewController
 
+- (void)purchaseItem:(SKProduct *)productToPurchase
+{
+    if (productToPurchase)    // make sure product is not null
+    {
+        SKPayment *payment = [SKPayment paymentWithProduct:productToPurchase];
+        [defaultQueue addPayment:payment];
+    }
+    else
+        NSLog(@"product is null!");
+}
+
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
 {
     for (SKPaymentTransaction *transaction in transactions)
@@ -22,27 +33,32 @@
         switch (transaction.transactionState)
         {
             case SKPaymentTransactionStatePurchased:
-                IS_TOUCH_ID_PURCHASED = YES;
+                NSLog(@"in SKPaymentTransactionStatePurchased");
+                [defaults setBool:YES forKey:KEY_IS_TOUCH_ID_PURCHASED];
                 [defaultQueue finishTransaction:transaction];
                 break;
             case SKPaymentTransactionStateFailed:
+                NSLog(@"in SKPaymentTransactionStateFailed");
                 [defaultQueue finishTransaction:transaction];
                 break;
             case SKPaymentTransactionStateRestored:
+                NSLog(@"in SKPaymentTransactionStateRestored");
+                [defaults setBool:YES forKey:KEY_IS_TOUCH_ID_PURCHASED];
                 [defaultQueue restoreCompletedTransactions];
                 break;
             default:
                 break;
         }
     }
+    [defaults synchronize];
 }
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
-    NSArray *products = response.products;
-    if ([products count] != 0)
+    arrayOfInAppProducts = response.products;
+    if ([arrayOfInAppProducts count] != 0)
     {
-        product = [products objectAtIndex:0];   // for now...
+        product = [arrayOfInAppProducts objectAtIndex:0];   // for now...
         NSLog(@"product Title = %@", product.localizedTitle);
         NSLog(@"product Description = %@", product.localizedDescription);
     }
@@ -52,6 +68,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    defaults = [NSUserDefaults standardUserDefaults];
     
     defaultQueue = [SKPaymentQueue defaultQueue];
     [defaultQueue addTransactionObserver:self];
@@ -84,6 +102,11 @@
 - (IBAction)button_showCurrentIDs:(id)sender
 {
     [self performSegueWithIdentifier:@"segueShowCurrentIDs" sender:nil];
+    
+    if ([defaults boolForKey:KEY_IS_TOUCH_ID_PURCHASED] == YES)
+    {
+        NSLog(@"touch has been purchased!");
+    }
 }
 
 - (IBAction)button_purchaseOptions:(id)sender
@@ -93,6 +116,71 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    if ([[segue identifier]isEqualToString:@"segueStartNewID"])
+    {
+        
+    }
+    else if ([[segue identifier]isEqualToString:@"segueShowCurrentIDs"])
+    {
+        
+    }
+    else if ([[segue identifier]isEqualToString:@"seguePurchaseOptions"])
+    {
+        PurchaseOptionsVC *povc = (PurchaseOptionsVC *)[segue destinationViewController];
+        
+        povc.delegate = self;
+        povc.arrayOfInAppProducts = arrayOfInAppProducts;
+    }
 }
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
