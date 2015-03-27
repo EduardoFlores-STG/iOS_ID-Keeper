@@ -27,6 +27,7 @@
     [defaultQueue addTransactionObserver:self];
     
     // begin check and communication with iTunesConnect for in-app options
+    // might want to call it when pushing to the purchasing view instead
     [self checkInAppPurchases];
 }
 
@@ -112,6 +113,7 @@
 }
 
 #pragma mark - In-App methods
+// *** I KEEP THINKING THIS IS IN THE WRONG CLASS ***
 // this begins a check of what products exists in the server
 - (void) checkInAppPurchases
 {

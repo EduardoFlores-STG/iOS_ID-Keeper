@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
 @interface NewCard_PreviewVC : UIViewController
+{
+    MBProgressHUD *hud;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *label_cardName;
