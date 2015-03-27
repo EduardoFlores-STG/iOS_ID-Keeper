@@ -156,7 +156,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMZ-Kh-O2d">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DefaultCardName" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMZ-Kh-O2d">
                                 <rect key="frame" x="16" y="100" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -173,7 +173,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxK-6A-3zB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DefaultCardIssuer" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxK-6A-3zB">
                                 <rect key="frame" x="16" y="167" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -252,14 +252,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iCH-P8-b7X">
-                                <rect key="frame" x="16" y="72" width="300" height="370"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iCH-P8-b7X">
+                                <rect key="frame" x="16" y="72" width="568" height="370"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="370" id="5Zz-YR-hEh"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezB-2w-SrU">
+                                <rect key="frame" x="16" y="518" width="568" height="30"/>
+                                <state key="normal" title="Save Card">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button_saveCard:" destination="uhe-d9-UhQ" eventType="touchUpInside" id="oYA-dM-9rS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARD NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="s4e-hy-KBb">
+                                <rect key="frame" x="16" y="450" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARD ISSUER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="L5E-uw-Wqp">
+                                <rect key="frame" x="16" y="479" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iCH-P8-b7X" firstAttribute="trailing" secondItem="wi3-LR-Hsg" secondAttribute="trailingMargin" id="1Xl-ES-vZZ"/>
+                            <constraint firstItem="s4e-hy-KBb" firstAttribute="top" secondItem="iCH-P8-b7X" secondAttribute="bottom" constant="8" id="2qA-Bz-zYN"/>
+                            <constraint firstItem="iCH-P8-b7X" firstAttribute="top" secondItem="VQj-e8-g84" secondAttribute="bottom" constant="8" id="GhQ-kT-SpV"/>
+                            <constraint firstAttribute="centerX" secondItem="s4e-hy-KBb" secondAttribute="centerX" id="Hqa-wG-9kN"/>
+                            <constraint firstItem="ezB-2w-SrU" firstAttribute="leading" secondItem="wi3-LR-Hsg" secondAttribute="leadingMargin" id="PS9-ib-Qsc"/>
+                            <constraint firstItem="iCH-P8-b7X" firstAttribute="leading" secondItem="wi3-LR-Hsg" secondAttribute="leadingMargin" id="SCu-YM-sDR"/>
+                            <constraint firstItem="L5E-uw-Wqp" firstAttribute="trailing" secondItem="wi3-LR-Hsg" secondAttribute="trailingMargin" id="XfX-ZD-Hm5"/>
+                            <constraint firstItem="L5E-uw-Wqp" firstAttribute="leading" secondItem="wi3-LR-Hsg" secondAttribute="leadingMargin" id="YNk-MU-2dy"/>
+                            <constraint firstItem="ezB-2w-SrU" firstAttribute="trailing" secondItem="wi3-LR-Hsg" secondAttribute="trailingMargin" id="Zn7-Ar-TFf"/>
+                            <constraint firstItem="s4e-hy-KBb" firstAttribute="trailing" secondItem="wi3-LR-Hsg" secondAttribute="trailingMargin" id="fgu-Rx-fuH"/>
+                            <constraint firstItem="s4e-hy-KBb" firstAttribute="leading" secondItem="wi3-LR-Hsg" secondAttribute="leadingMargin" id="jDR-s3-BqO"/>
+                            <constraint firstItem="UwF-lf-xtg" firstAttribute="top" secondItem="ezB-2w-SrU" secondAttribute="bottom" constant="8" id="qJj-uZ-FT3"/>
+                            <constraint firstAttribute="centerX" secondItem="iCH-P8-b7X" secondAttribute="centerX" id="qmk-jA-IYH"/>
+                            <constraint firstItem="L5E-uw-Wqp" firstAttribute="top" secondItem="s4e-hy-KBb" secondAttribute="bottom" constant="8" id="saW-yY-Bcp"/>
+                            <constraint firstAttribute="centerX" secondItem="ezB-2w-SrU" secondAttribute="centerX" id="vWn-jJ-2ZV"/>
+                            <constraint firstAttribute="centerX" secondItem="L5E-uw-Wqp" secondAttribute="centerX" id="zkm-0C-p0S"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="iCH-P8-b7X" id="gQW-fF-Efy"/>
+                        <outlet property="label_cardIssuer" destination="L5E-uw-Wqp" id="lDy-Ky-NNR"/>
+                        <outlet property="label_cardName" destination="s4e-hy-KBb" id="UcG-k9-vRm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wj2-h0-0Lr" userLabel="First Responder" sceneMemberID="firstResponder"/>

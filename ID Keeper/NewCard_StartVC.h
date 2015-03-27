@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *picker_cardType;
 
 @property (strong, nonatomic) NSArray *arrayOfCardTypes;
+@property (nonatomic, copy) NSString *pickerItemSelected;
 
 - (IBAction)button_takePicture:(id)sender;
 @end

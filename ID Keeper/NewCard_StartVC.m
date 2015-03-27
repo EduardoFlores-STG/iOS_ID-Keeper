@@ -53,6 +53,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     NSLog(@"Selected = %@", [[self arrayOfCardTypes]objectAtIndex:row]);
+    self.pickerItemSelected = [[self arrayOfCardTypes]objectAtIndex:row];
 }
 
 - (IBAction)button_takePicture:(id)sender
@@ -100,6 +101,13 @@
         UIImage *imageTaken = (UIImage *)sender;
         NewCard_PreviewVC *ncpvc = (NewCard_PreviewVC *)[segue destinationViewController];
         ncpvc.imageTaken = imageTaken;
+        ncpvc.card_name = textField_cardName.text;
+        ncpvc.card_issuer = textField_cardIssuer.text;
+        
+        if ( !self.pickerItemSelected)
+            ncpvc.card_type = [[self arrayOfCardTypes]objectAtIndex:0];
+        else
+            ncpvc.card_type = self.pickerItemSelected;
     }
 }
 @end

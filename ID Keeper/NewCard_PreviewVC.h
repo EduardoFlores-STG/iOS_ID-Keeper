@@ -11,7 +11,14 @@
 @interface NewCard_PreviewVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *label_cardName;
+@property (weak, nonatomic) IBOutlet UILabel *label_cardIssuer;
+
+- (IBAction)button_saveCard:(id)sender;
 
 @property (nonatomic, retain) UIImage *imageTaken;
+@property (nonatomic, copy) NSString *card_name;
+@property (nonatomic, copy) NSString *card_issuer;
+@property (nonatomic, copy) NSString *card_type;
 
 @end
