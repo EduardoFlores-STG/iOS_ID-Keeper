@@ -8,6 +8,7 @@
 
 #import "InitialViewController.h"
 #import "MacrosHelper.h"
+#import <LocalAuthentication/LocalAuthentication.h>
 
 @interface InitialViewController ()
 
@@ -40,11 +41,14 @@
 
 - (IBAction)button_showCurrentIDs:(id)sender
 {
-    [self performSegueWithIdentifier:@"segueShowCurrentIDs" sender:nil];
-    
     if ([defaults boolForKey:KEY_IS_TOUCH_ID_PURCHASED] == YES)
     {
         NSLog(@"touch has been purchased!");
+        [self authenticateWithTouchID]; // attempt to authenticate, and trigger seque from challenge
+    }
+    else    // they haven't purchased the in-app option!
+    {
+        [self performSegueWithIdentifier:@"segueShowCurrentIDs" sender:nil];
     }
 }
 
@@ -69,6 +73,39 @@
         
         povc.delegate = self;
         povc.arrayOfInAppProducts = arrayOfInAppProducts;
+    }
+}
+
+#pragma mark - TouchID methods
+- (void) authenticateWithTouchID
+{
+    LAContext *context = [[LAContext alloc]init];
+    NSError *error = nil;
+    
+    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error])
+    {
+        // authenticate user
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
+                localizedReason:@"Please authenticate" reply:^(BOOL success, NSError *error)
+                {
+                    if (error)
+                        NSLog(@"Error authenticating with TouchID");
+                    if (success)
+                    {
+                        NSLog(@"Succesfully authenticated with TouchID!");
+                        // perform segue in main thread
+                        dispatch_async(dispatch_get_main_queue(),
+                            ^{
+                                [self performSegueWithIdentifier:@"segueShowCurrentIDs" sender:nil];
+                            });
+                    }
+                    else
+                        NSLog(@"Something bad happened when attempting to authenticate with TouchID");
+                }];
+    }
+    else
+    {
+        NSLog(@"cannot authenticate with TouchID");
     }
 }
 
