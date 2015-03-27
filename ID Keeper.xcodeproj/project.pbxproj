@@ -25,6 +25,10 @@
 		A072B84B1AC4A48C00B08788 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A072B84A1AC4A48C00B08788 /* LocalAuthentication.framework */; };
 		A072B84D1AC4A66000B08788 /* touch_id_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A072B84C1AC4A66000B08788 /* touch_id_icon.png */; };
 		A072B8511AC4AF1700B08788 /* PurchaseOptionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A072B8501AC4AF1700B08788 /* PurchaseOptionsVC.m */; };
+		A0838EC91AC5C3B20049B2B2 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A0838EC81AC5C3B20049B2B2 /* MBProgressHUD.m */; };
+		A0838ECB1AC5C3C40049B2B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0838ECA1AC5C3C40049B2B2 /* Foundation.framework */; };
+		A0838ECD1AC5C3CC0049B2B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0838ECC1AC5C3CC0049B2B2 /* UIKit.framework */; };
+		A0838ECF1AC5C3D40049B2B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0838ECE1AC5C3D40049B2B2 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,11 @@
 		A072B84E1AC4AAC100B08788 /* MacrosHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacrosHelper.h; sourceTree = "<group>"; };
 		A072B84F1AC4AF1700B08788 /* PurchaseOptionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseOptionsVC.h; sourceTree = "<group>"; };
 		A072B8501AC4AF1700B08788 /* PurchaseOptionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseOptionsVC.m; sourceTree = "<group>"; };
+		A0838EC71AC5C3B20049B2B2 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		A0838EC81AC5C3B20049B2B2 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		A0838ECA1AC5C3C40049B2B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A0838ECC1AC5C3CC0049B2B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A0838ECE1AC5C3D40049B2B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0838ECF1AC5C3D40049B2B2 /* CoreGraphics.framework in Frameworks */,
+				A0838ECD1AC5C3CC0049B2B2 /* UIKit.framework in Frameworks */,
+				A0838ECB1AC5C3C40049B2B2 /* Foundation.framework in Frameworks */,
 				A072B84B1AC4A48C00B08788 /* LocalAuthentication.framework in Frameworks */,
 				A072B8491AC4A47100B08788 /* StoreKit.framework in Frameworks */,
 			);
@@ -93,6 +105,9 @@
 		A072B8041AC49AF700B08788 = {
 			isa = PBXGroup;
 			children = (
+				A0838ECE1AC5C3D40049B2B2 /* CoreGraphics.framework */,
+				A0838ECC1AC5C3CC0049B2B2 /* UIKit.framework */,
+				A0838ECA1AC5C3C40049B2B2 /* Foundation.framework */,
 				A072B84A1AC4A48C00B08788 /* LocalAuthentication.framework */,
 				A072B8481AC4A47100B08788 /* StoreKit.framework */,
 				A072B80F1AC49AF700B08788 /* ID Keeper */,
@@ -136,6 +151,8 @@
 		A072B8101AC49AF700B08788 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0838EC71AC5C3B20049B2B2 /* MBProgressHUD.h */,
+				A0838EC81AC5C3B20049B2B2 /* MBProgressHUD.m */,
 				A072B8111AC49AF700B08788 /* Info.plist */,
 				A072B8121AC49AF700B08788 /* main.m */,
 			);
@@ -298,6 +315,7 @@
 				A072B8191AC49AF800B08788 /* ID_Keeper.xcdatamodeld in Sources */,
 				A072B8471AC4A1CD00B08788 /* InitialViewController.m in Sources */,
 				A072B8161AC49AF700B08788 /* AppDelegate.m in Sources */,
+				A0838EC91AC5C3B20049B2B2 /* MBProgressHUD.m in Sources */,
 				A05B4C4F1AC4EA790099EFB4 /* NewCard_StartVC.m in Sources */,
 				A072B8131AC49AF700B08788 /* main.m in Sources */,
 			);
