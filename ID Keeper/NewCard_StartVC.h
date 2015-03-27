@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewCard_StartVC : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
-
+@interface NewCard_StartVC : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+{
+    UIImagePickerController *imagePicker;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *label_cardName;
 @property (weak, nonatomic) IBOutlet UILabel *label_cardIssuer;

@@ -7,6 +7,7 @@
 //
 
 #import "NewCard_StartVC.h"
+#import "NewCard_PreviewVC.h"
 
 @implementation NewCard_StartVC
 @synthesize label_cardIssuer, label_cardName, label_cardType;
@@ -18,6 +19,8 @@
     
     [self setValuesForUILabels];
     [self setValuesForArrayOfCardTypes];
+    
+    imagePicker = [[UIImagePickerController alloc]init];
 }
 
 - (void) setValuesForUILabels
@@ -54,6 +57,50 @@
 
 - (IBAction)button_takePicture:(id)sender
 {
+    // check if device has a camera
+    if ( [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == YES )
+    {
+        // make this class as the delegate
+        imagePicker.delegate = self;
+        
+        // set the source to be the camera
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        // limit this to only pictures, no video
+        imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+        
+        // show the imagepicker
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
+    else
+    {
+        NSLog(@"This device does not have a camera!");
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    // access the uncropped image from info dictionary
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    
+    // dismiss pickerview
+    [self dismissViewControllerAnimated:YES completion:
+     ^{
+         // push segue to new view
+         [self performSegueWithIdentifier:@"segueNewCardPreview" sender:image];
+
+    }];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier]isEqualToString:@"segueNewCardPreview"])
+    {
+        UIImage *imageTaken = (UIImage *)sender;
+        NewCard_PreviewVC *ncpvc = (NewCard_PreviewVC *)[segue destinationViewController];
+        ncpvc.imageTaken = imageTaken;
+    }
 }
 @end
 

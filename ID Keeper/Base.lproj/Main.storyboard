@@ -233,11 +233,38 @@
                         <outlet property="picker_cardType" destination="SZ8-JA-AKP" id="rfi-DP-T9a"/>
                         <outlet property="textField_cardIssuer" destination="lxK-6A-3zB" id="EDd-gm-xit"/>
                         <outlet property="textField_cardName" destination="NMZ-Kh-O2d" id="tc3-lI-LMO"/>
+                        <segue destination="uhe-d9-UhQ" kind="show" identifier="segueNewCardPreview" id="kaw-N2-MFG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKr-Kw-vOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1896" y="-790"/>
+        </scene>
+        <!--New Card PreviewVC-->
+        <scene sceneID="f3g-0J-ncf">
+            <objects>
+                <viewController id="uhe-d9-UhQ" customClass="NewCard_PreviewVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VQj-e8-g84"/>
+                        <viewControllerLayoutGuide type="bottom" id="UwF-lf-xtg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wi3-LR-Hsg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iCH-P8-b7X">
+                                <rect key="frame" x="16" y="72" width="300" height="370"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="iCH-P8-b7X" id="gQW-fF-Efy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wj2-h0-0Lr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2574" y="-790"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="K2i-95-QPN">
