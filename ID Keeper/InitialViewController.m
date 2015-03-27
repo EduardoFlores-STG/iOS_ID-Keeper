@@ -15,6 +15,82 @@
 
 @implementation InitialViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    defaults = [NSUserDefaults standardUserDefaults];
+    
+    defaultQueue = [SKPaymentQueue defaultQueue];
+    [defaultQueue addTransactionObserver:self];
+    [self checkInAppPurchases];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)button_startNewID:(id)sender
+{
+    [self performSegueWithIdentifier:@"segueStartNewID" sender:nil];
+}
+
+- (IBAction)button_showCurrentIDs:(id)sender
+{
+    [self performSegueWithIdentifier:@"segueShowCurrentIDs" sender:nil];
+    
+    if ([defaults boolForKey:KEY_IS_TOUCH_ID_PURCHASED] == YES)
+    {
+        NSLog(@"touch has been purchased!");
+    }
+}
+
+- (IBAction)button_purchaseOptions:(id)sender
+{
+    [self performSegueWithIdentifier:@"seguePurchaseOptions" sender:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier]isEqualToString:@"segueStartNewID"])
+    {
+        
+    }
+    else if ([[segue identifier]isEqualToString:@"segueShowCurrentIDs"])
+    {
+        
+    }
+    else if ([[segue identifier]isEqualToString:@"seguePurchaseOptions"])
+    {
+        PurchaseOptionsVC *povc = (PurchaseOptionsVC *)[segue destinationViewController];
+        
+        povc.delegate = self;
+        povc.arrayOfInAppProducts = arrayOfInAppProducts;
+    }
+}
+
+#pragma mark - In-App methods
+// this begins a check of what products exists in the server
+- (void) checkInAppPurchases
+{
+    if ([SKPaymentQueue canMakePayments])
+    {
+        // Touch ID in-app purchase
+        NSSet *product_touchID = [NSSet setWithObject:IN_APP_PURCHASE_IDENTIFIER_TOUCH_ID];
+        SKProductsRequest *request_touchID = [[SKProductsRequest alloc]initWithProductIdentifiers:product_touchID];
+        request_touchID.delegate = self;
+        [request_touchID start];
+    }
+    else
+    {
+        NSLog(@"Can't make payments");
+    }
+}
+
+// delegate method coming from the "purchase options" view
 - (void)purchaseItem:(SKProduct *)productToPurchase
 {
     if (productToPurchase)    // make sure product is not null
@@ -82,75 +158,6 @@
             // verified that the purchase was for the touch ID option
             [defaults setBool:YES forKey:KEY_IS_TOUCH_ID_PURCHASED];
         }
-    }
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    defaults = [NSUserDefaults standardUserDefaults];
-    
-    defaultQueue = [SKPaymentQueue defaultQueue];
-    [defaultQueue addTransactionObserver:self];
-    [self checkInAppPurchases];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void) checkInAppPurchases
-{
-    if ([SKPaymentQueue canMakePayments])
-    {
-        // Touch ID in-app purchase
-        NSSet *product_touchID = [NSSet setWithObject:IN_APP_PURCHASE_IDENTIFIER_TOUCH_ID];
-        SKProductsRequest *request_touchID = [[SKProductsRequest alloc]initWithProductIdentifiers:product_touchID];
-        request_touchID.delegate = self;
-        [request_touchID start];
-    }
-}
-
-- (IBAction)button_startNewID:(id)sender
-{
-    [self performSegueWithIdentifier:@"segueStartNewID" sender:nil];
-}
-
-- (IBAction)button_showCurrentIDs:(id)sender
-{
-    [self performSegueWithIdentifier:@"segueShowCurrentIDs" sender:nil];
-    
-    if ([defaults boolForKey:KEY_IS_TOUCH_ID_PURCHASED] == YES)
-    {
-        NSLog(@"touch has been purchased!");
-    }
-}
-
-- (IBAction)button_purchaseOptions:(id)sender
-{
-    [self performSegueWithIdentifier:@"seguePurchaseOptions" sender:nil];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier]isEqualToString:@"segueStartNewID"])
-    {
-        
-    }
-    else if ([[segue identifier]isEqualToString:@"segueShowCurrentIDs"])
-    {
-        
-    }
-    else if ([[segue identifier]isEqualToString:@"seguePurchaseOptions"])
-    {
-        PurchaseOptionsVC *povc = (PurchaseOptionsVC *)[segue destinationViewController];
-        
-        povc.delegate = self;
-        povc.arrayOfInAppProducts = arrayOfInAppProducts;
     }
 }
 @end
