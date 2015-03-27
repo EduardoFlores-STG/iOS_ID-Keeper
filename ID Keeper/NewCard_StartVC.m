@@ -29,7 +29,7 @@
 
 - (void) setValuesForArrayOfCardTypes
 {
-    self.arrayOfCardTypes = [NSArray arrayWithObjects:@"Gym", @"Grocery Store", @"Movies", nil];
+    self.arrayOfCardTypes = [NSArray arrayWithObjects:@"Government", @"Gym", @"Grocery Store", @"Movies", @"Other", nil];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -52,6 +52,9 @@
     NSLog(@"Selected = %@", [[self arrayOfCardTypes]objectAtIndex:row]);
 }
 
+- (IBAction)button_takePicture:(id)sender
+{
+}
 @end
 
 

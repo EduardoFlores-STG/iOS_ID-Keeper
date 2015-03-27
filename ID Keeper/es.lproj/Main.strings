@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "92d-H8-WQl"; */
+"92d-H8-WQl.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Enable Touch ID"; ObjectID = "JwO-0R-81q"; */
+"JwO-0R-81q.text" = "Enable Touch ID";
+
+/* Class = "UILabel"; text = "CARD TYPE"; ObjectID = "L2h-cz-zyl"; */
+"L2h-cz-zyl.text" = "CARD TYPE";
+
+/* Class = "UIButton"; normalTitle = "Purchase additional options!"; ObjectID = "LDa-Fb-xtO"; */
+"LDa-Fb-xtO.normalTitle" = "Compre opciones adicionales!";
+
+/* Class = "UILabel"; text = "CARD NAME"; ObjectID = "RV9-UX-VpM"; */
+"RV9-UX-VpM.text" = "CARD NAME";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "b5N-n9-gqv"; */
+"b5N-n9-gqv.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cc5-oP-8cN"; */
+"cc5-oP-8cN.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "CARD ISSUER"; ObjectID = "pCb-lP-XBG"; */
+"pCb-lP-XBG.text" = "CARD ISSUER";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "r9o-dd-yBx"; */
+"r9o-dd-yBx.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "rQ0-75-dUL"; */
+"rQ0-75-dUL.title" = "Title";

@@ -22,4 +22,5 @@
 
 @property (strong, nonatomic) NSArray *arrayOfCardTypes;
 
+- (IBAction)button_takePicture:(id)sender;
 @end

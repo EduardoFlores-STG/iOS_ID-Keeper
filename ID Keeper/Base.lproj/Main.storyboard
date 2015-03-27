@@ -219,7 +219,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="rQ0-75-dUL">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="tL8-4S-nFD"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="tL8-4S-nFD">
+                            <connections>
+                                <action selector="button_takePicture:" destination="gQf-YR-yeM" id="fsN-b0-Dhr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
