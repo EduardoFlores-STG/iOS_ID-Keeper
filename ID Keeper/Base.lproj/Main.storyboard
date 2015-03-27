@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="1178" y="-440"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="IzG-eR-Tny">
             <objects>
-                <viewController id="gQf-YR-yeM" sceneMemberID="viewController">
+                <viewController id="gQf-YR-yeM" customClass="NewCard_StartVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J5o-rI-nBg"/>
                         <viewControllerLayoutGuide type="bottom" id="VqO-Yd-4Wg"/>
@@ -149,8 +149,87 @@
                     <view key="view" contentMode="scaleToFill" id="82m-2B-DzG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARD NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RV9-UX-VpM">
+                                <rect key="frame" x="16" y="72" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMZ-Kh-O2d">
+                                <rect key="frame" x="16" y="100" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARD ISSUER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-lP-XBG">
+                                <rect key="frame" x="16" y="138" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARD TYPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2h-cz-zyl">
+                                <rect key="frame" x="16" y="206" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxK-6A-3zB">
+                                <rect key="frame" x="16" y="167" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I02-ce-mhB">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                            </navigationBar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZ8-JA-AKP">
+                                <rect key="frame" x="16" y="235" width="568" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gQf-YR-yeM" id="wwc-Ox-W9m"/>
+                                    <outlet property="delegate" destination="gQf-YR-yeM" id="ylX-1Y-jdG"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="RV9-UX-VpM" secondAttribute="centerX" id="2OA-F8-hvA"/>
+                            <constraint firstAttribute="centerX" secondItem="SZ8-JA-AKP" secondAttribute="centerX" id="2vc-sg-sWp"/>
+                            <constraint firstItem="pCb-lP-XBG" firstAttribute="top" secondItem="NMZ-Kh-O2d" secondAttribute="bottom" constant="8" id="45c-QB-bhb"/>
+                            <constraint firstAttribute="centerX" secondItem="pCb-lP-XBG" secondAttribute="centerX" id="5rk-KW-eni"/>
+                            <constraint firstItem="RV9-UX-VpM" firstAttribute="trailing" secondItem="82m-2B-DzG" secondAttribute="trailingMargin" id="BQI-5V-11N"/>
+                            <constraint firstItem="SZ8-JA-AKP" firstAttribute="top" secondItem="L2h-cz-zyl" secondAttribute="bottom" constant="8.5" id="Cyu-hj-SfT"/>
+                            <constraint firstItem="NMZ-Kh-O2d" firstAttribute="leading" secondItem="82m-2B-DzG" secondAttribute="leadingMargin" id="DWr-EK-QEG"/>
+                            <constraint firstItem="SZ8-JA-AKP" firstAttribute="trailing" secondItem="82m-2B-DzG" secondAttribute="trailingMargin" id="Dcn-Uy-dZA"/>
+                            <constraint firstItem="RV9-UX-VpM" firstAttribute="top" secondItem="J5o-rI-nBg" secondAttribute="bottom" constant="8" id="KzZ-hY-tzU"/>
+                            <constraint firstItem="RV9-UX-VpM" firstAttribute="leading" secondItem="82m-2B-DzG" secondAttribute="leadingMargin" id="VcA-Wp-lgt"/>
+                            <constraint firstItem="pCb-lP-XBG" firstAttribute="trailing" secondItem="82m-2B-DzG" secondAttribute="trailingMargin" id="Y5I-Ly-TFF"/>
+                            <constraint firstItem="lxK-6A-3zB" firstAttribute="leading" secondItem="82m-2B-DzG" secondAttribute="leadingMargin" id="a3v-t2-g8l"/>
+                            <constraint firstItem="L2h-cz-zyl" firstAttribute="trailing" secondItem="82m-2B-DzG" secondAttribute="trailingMargin" id="a6p-mz-5Za"/>
+                            <constraint firstItem="NMZ-Kh-O2d" firstAttribute="trailing" secondItem="82m-2B-DzG" secondAttribute="trailingMargin" id="bLJ-W7-Wl7"/>
+                            <constraint firstItem="lxK-6A-3zB" firstAttribute="top" secondItem="pCb-lP-XBG" secondAttribute="bottom" constant="8" id="clg-mW-wog"/>
+                            <constraint firstItem="L2h-cz-zyl" firstAttribute="leading" secondItem="82m-2B-DzG" secondAttribute="leadingMargin" id="cqj-wF-jDu"/>
+                            <constraint firstItem="lxK-6A-3zB" firstAttribute="trailing" secondItem="82m-2B-DzG" secondAttribute="trailingMargin" id="lgc-F1-fIx"/>
+                            <constraint firstItem="pCb-lP-XBG" firstAttribute="leading" secondItem="82m-2B-DzG" secondAttribute="leadingMargin" id="qhs-Tw-YAQ"/>
+                            <constraint firstItem="SZ8-JA-AKP" firstAttribute="leading" secondItem="82m-2B-DzG" secondAttribute="leadingMargin" id="rZc-wB-j90"/>
+                            <constraint firstItem="NMZ-Kh-O2d" firstAttribute="top" secondItem="RV9-UX-VpM" secondAttribute="bottom" constant="8" id="s4f-sh-Eex"/>
+                            <constraint firstAttribute="centerX" secondItem="lxK-6A-3zB" secondAttribute="centerX" id="we8-tB-g40"/>
+                            <constraint firstItem="L2h-cz-zyl" firstAttribute="top" secondItem="lxK-6A-3zB" secondAttribute="bottom" constant="9" id="wky-xs-V8t"/>
+                            <constraint firstAttribute="centerX" secondItem="NMZ-Kh-O2d" secondAttribute="centerX" id="y8n-VO-RNh"/>
+                            <constraint firstAttribute="centerX" secondItem="L2h-cz-zyl" secondAttribute="centerX" id="zTx-iO-r4M"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="rQ0-75-dUL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="tL8-4S-nFD"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="label_cardIssuer" destination="pCb-lP-XBG" id="Fb9-QM-zA3"/>
+                        <outlet property="label_cardName" destination="RV9-UX-VpM" id="eXZ-rB-r7i"/>
+                        <outlet property="label_cardType" destination="L2h-cz-zyl" id="qSJ-Ro-MLj"/>
+                        <outlet property="picker_cardType" destination="SZ8-JA-AKP" id="rfi-DP-T9a"/>
+                        <outlet property="textField_cardIssuer" destination="lxK-6A-3zB" id="EDd-gm-xit"/>
+                        <outlet property="textField_cardName" destination="NMZ-Kh-O2d" id="tc3-lI-LMO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKr-Kw-vOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

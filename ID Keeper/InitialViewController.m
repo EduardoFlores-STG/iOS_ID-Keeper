@@ -25,6 +25,8 @@
     
     defaultQueue = [SKPaymentQueue defaultQueue];
     [defaultQueue addTransactionObserver:self];
+    
+    // begin check and communication with iTunesConnect for in-app options
     [self checkInAppPurchases];
 }
 

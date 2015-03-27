@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A05B4C4F1AC4EA790099EFB4 /* NewCard_StartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B4C4E1AC4EA790099EFB4 /* NewCard_StartVC.m */; };
 		A072B8131AC49AF700B08788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A072B8121AC49AF700B08788 /* main.m */; };
 		A072B8161AC49AF700B08788 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A072B8151AC49AF700B08788 /* AppDelegate.m */; };
 		A072B8191AC49AF800B08788 /* ID_Keeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A072B8171AC49AF800B08788 /* ID_Keeper.xcdatamodeld */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A05B4C4D1AC4EA790099EFB4 /* NewCard_StartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCard_StartVC.h; sourceTree = "<group>"; };
+		A05B4C4E1AC4EA790099EFB4 /* NewCard_StartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCard_StartVC.m; sourceTree = "<group>"; };
 		A072B80D1AC49AF700B08788 /* ID Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ID Keeper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A072B8111AC49AF700B08788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A072B8121AC49AF700B08788 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				A072B8461AC4A1CD00B08788 /* InitialViewController.m */,
 				A072B84F1AC4AF1700B08788 /* PurchaseOptionsVC.h */,
 				A072B8501AC4AF1700B08788 /* PurchaseOptionsVC.m */,
+				A05B4C4D1AC4EA790099EFB4 /* NewCard_StartVC.h */,
+				A05B4C4E1AC4EA790099EFB4 /* NewCard_StartVC.m */,
 			);
 			path = "ID Keeper";
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				A072B8191AC49AF800B08788 /* ID_Keeper.xcdatamodeld in Sources */,
 				A072B8471AC4A1CD00B08788 /* InitialViewController.m in Sources */,
 				A072B8161AC49AF700B08788 /* AppDelegate.m in Sources */,
+				A05B4C4F1AC4EA790099EFB4 /* NewCard_StartVC.m in Sources */,
 				A072B8131AC49AF700B08788 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +490,7 @@
 				A072B8351AC49AF800B08788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A072B8361AC49AF800B08788 /* Build configuration list for PBXNativeTarget "ID KeeperTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +499,7 @@
 				A072B8381AC49AF800B08788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
