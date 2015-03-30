@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *label_purchaseDescription;
 @property (weak, nonatomic) IBOutlet UILabel *label_purchaseTitle;
 
+- (IBAction)button_closeView:(id)sender;
 - (IBAction)button_purchaseTouchID:(id)sender;
 
 @end

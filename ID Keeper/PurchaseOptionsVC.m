@@ -29,14 +29,20 @@
     [self checkInAppPurchases];
 }
 
+- (IBAction)button_closeView:(id)sender
+{
+    // close the uiview that was opened modally
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)button_purchaseTouchID:(id)sender
 {
     for (SKProduct *product in arrayOfInAppProducts)
     {
         if ([[product productIdentifier]isEqualToString:IN_APP_PURCHASE_IDENTIFIER_TOUCH_ID])
         {
-            // close the uiview that was opened modally
-            [self dismissViewControllerAnimated:YES completion:nil];
+            SKPayment *payment = [SKPayment paymentWithProduct:product];
+            [defaultQueue addPayment:payment];
         }
     }
 }
