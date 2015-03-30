@@ -317,9 +317,11 @@
                         <outlet property="imageView" destination="iCH-P8-b7X" id="gQW-fF-Efy"/>
                         <outlet property="label_cardIssuer" destination="L5E-uw-Wqp" id="lDy-Ky-NNR"/>
                         <outlet property="label_cardName" destination="s4e-hy-KBb" id="UcG-k9-vRm"/>
+                        <segue destination="0cf-Y3-KfN" kind="unwind" identifier="segueUnwindToInitialViewController" unwindAction="unwindToInitialViewController:" id="fEu-7x-7jZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wj2-h0-0Lr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0cf-Y3-KfN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2574" y="-790"/>
         </scene>

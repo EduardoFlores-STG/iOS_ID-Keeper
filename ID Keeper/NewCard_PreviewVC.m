@@ -87,14 +87,11 @@
                afterDelay:amountOfSecondsDisplayingSuccessDialog];
 }
 
-- (void) removeAllProgressDialogs
-{
-    [ProgressDialogsHelper removeAllProgressDialogsForView:self.view];
-}
-
 - (void) returnToInitialView
 {
     [ProgressDialogsHelper removeAllProgressDialogsForView:self.view];
+    [self performSegueWithIdentifier:@"segueUnwindToInitialViewController" sender:nil];
+
 }
 @end
 
