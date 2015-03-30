@@ -31,6 +31,7 @@
 		A0838ECF1AC5C3D40049B2B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0838ECE1AC5C3D40049B2B2 /* CoreGraphics.framework */; };
 		A0838ED21AC5CC110049B2B2 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = A0838ED01AC5CC110049B2B2 /* checkmark.png */; };
 		A0838ED31AC5CC110049B2B2 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0838ED11AC5CC110049B2B2 /* checkmark@2x.png */; };
+		A0D590181AC9B8B5004EE678 /* ProgressDialogsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D590171AC9B8B5004EE678 /* ProgressDialogsHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		A0838ECE1AC5C3D40049B2B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A0838ED01AC5CC110049B2B2 /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
 		A0838ED11AC5CC110049B2B2 /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
+		A0D590161AC9B8B5004EE678 /* ProgressDialogsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressDialogsHelper.h; sourceTree = "<group>"; };
+		A0D590171AC9B8B5004EE678 /* ProgressDialogsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressDialogsHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +112,6 @@
 		A072B8041AC49AF700B08788 = {
 			isa = PBXGroup;
 			children = (
-				A0838ECE1AC5C3D40049B2B2 /* CoreGraphics.framework */,
-				A0838ECC1AC5C3CC0049B2B2 /* UIKit.framework */,
-				A0838ECA1AC5C3C40049B2B2 /* Foundation.framework */,
-				A072B84A1AC4A48C00B08788 /* LocalAuthentication.framework */,
-				A072B8481AC4A47100B08788 /* StoreKit.framework */,
 				A072B80F1AC49AF700B08788 /* ID Keeper */,
 				A072B82C1AC49AF800B08788 /* ID KeeperTests */,
 				A072B80E1AC49AF700B08788 /* Products */,
@@ -132,6 +130,8 @@
 		A072B80F1AC49AF700B08788 /* ID Keeper */ = {
 			isa = PBXGroup;
 			children = (
+				A0D590151AC9B872004EE678 /* Helpers */,
+				A0D590141AC9B860004EE678 /* Frameworks */,
 				A072B8401AC4A1A900B08788 /* Images */,
 				A072B83C1AC4A01400B08788 /* Core Data */,
 				A072B84E1AC4AAC100B08788 /* MacrosHelper.h */,
@@ -155,8 +155,6 @@
 		A072B8101AC49AF700B08788 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A0838EC71AC5C3B20049B2B2 /* MBProgressHUD.h */,
-				A0838EC81AC5C3B20049B2B2 /* MBProgressHUD.m */,
 				A072B8111AC49AF700B08788 /* Info.plist */,
 				A072B8121AC49AF700B08788 /* main.m */,
 			);
@@ -203,6 +201,29 @@
 				A072B8421AC4A1B300B08788 /* icon_write.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		A0D590141AC9B860004EE678 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0838ECE1AC5C3D40049B2B2 /* CoreGraphics.framework */,
+				A0838ECC1AC5C3CC0049B2B2 /* UIKit.framework */,
+				A0838ECA1AC5C3C40049B2B2 /* Foundation.framework */,
+				A072B84A1AC4A48C00B08788 /* LocalAuthentication.framework */,
+				A072B8481AC4A47100B08788 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0D590151AC9B872004EE678 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A0838EC71AC5C3B20049B2B2 /* MBProgressHUD.h */,
+				A0838EC81AC5C3B20049B2B2 /* MBProgressHUD.m */,
+				A0D590161AC9B8B5004EE678 /* ProgressDialogsHelper.h */,
+				A0D590171AC9B8B5004EE678 /* ProgressDialogsHelper.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +347,7 @@
 				A0838EC91AC5C3B20049B2B2 /* MBProgressHUD.m in Sources */,
 				A05B4C4F1AC4EA790099EFB4 /* NewCard_StartVC.m in Sources */,
 				A072B8131AC49AF700B08788 /* main.m in Sources */,
+				A0D590181AC9B8B5004EE678 /* ProgressDialogsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

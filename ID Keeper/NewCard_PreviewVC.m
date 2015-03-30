@@ -9,6 +9,7 @@
 #import "NewCard_PreviewVC.h"
 #import "CoreDataHelper.h"
 #import "Card.h"
+#import "ProgressDialogsHelper.h"
 
 @implementation NewCard_PreviewVC
 @synthesize imageTaken, imageView;
@@ -48,9 +49,7 @@
 - (IBAction)button_saveCard:(id)sender
 {
     // display "waiting" Progress dialog
-    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeIndeterminate;
-    hud.labelText = @"Saving card...";
+    [ProgressDialogsHelper showIndeterminateDialogForView:self.view withText:@"Saving card..."];
     
     //dispatch_queue_t saveQueue = dispatch_queue_create("SaveQueue", NULL);
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0),
@@ -64,15 +63,13 @@
             // save core data managedObjectContext
             [CoreDataHelper saveManagedObjectContext];
             
-            // NOT STARTING!
             dispatch_async(dispatch_get_main_queue(),
                 ^{
+                    [ProgressDialogsHelper removeAllProgressDialogsForView:self.view];
+                    
                     // display success dialog
                     [self displaySuccessDialog];
-                    
                     // remove all progress dialogs
-                    [self removeAllProgressDialogs];
-                    
                     // return to InitialViewController
                 });
         });
@@ -81,12 +78,10 @@
 - (void) displaySuccessDialog
 {
     float amountOfSecondsDisplayingSuccessDialog = 3.0f;
-    [self removeAllProgressDialogs];
-    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.customView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"checkmark.png"]];
-    hud.mode = MBProgressHUDModeCustomView;
-    hud.labelText = @"Card Saved!";
     
+    [ProgressDialogsHelper showSuccessDialogForView:self.view withText:@"Card Saved!"];
+    
+    // keep the view active for x amount of seconds
     [self performSelector:@selector(returnToInitialView)
                withObject:nil
                afterDelay:amountOfSecondsDisplayingSuccessDialog];
@@ -94,13 +89,12 @@
 
 - (void) removeAllProgressDialogs
 {
-    [hud hide:YES];
-    [hud removeFromSuperview];
+    [ProgressDialogsHelper removeAllProgressDialogsForView:self.view];
 }
 
 - (void) returnToInitialView
 {
-    [self removeAllProgressDialogs];
+    [ProgressDialogsHelper removeAllProgressDialogsForView:self.view];
 }
 @end
 

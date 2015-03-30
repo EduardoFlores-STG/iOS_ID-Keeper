@@ -23,12 +23,12 @@
     
     defaults = [NSUserDefaults standardUserDefaults];
     
-    defaultQueue = [SKPaymentQueue defaultQueue];
-    [defaultQueue addTransactionObserver:self];
-    
-    // begin check and communication with iTunesConnect for in-app options
-    // might want to call it when pushing to the purchasing view instead
-    [self checkInAppPurchases];
+//    defaultQueue = [SKPaymentQueue defaultQueue];
+//    [defaultQueue addTransactionObserver:self];
+//    
+//    // begin check and communication with iTunesConnect for in-app options
+//    // might want to call it when pushing to the purchasing view instead
+//    [self checkInAppPurchases];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,10 +72,10 @@
     }
     else if ([[segue identifier]isEqualToString:@"seguePurchaseOptions"])
     {
-        PurchaseOptionsVC *povc = (PurchaseOptionsVC *)[segue destinationViewController];
-        
-        povc.delegate = self;
-        povc.arrayOfInAppProducts = arrayOfInAppProducts;
+//        PurchaseOptionsVC *povc = (PurchaseOptionsVC *)[segue destinationViewController];
+//        
+//        povc.delegate = self;
+//        povc.arrayOfInAppProducts = arrayOfInAppProducts;
     }
 }
 
@@ -112,95 +112,95 @@
     }
 }
 
-#pragma mark - In-App methods
-// *** I KEEP THINKING THIS IS IN THE WRONG CLASS ***
-// this begins a check of what products exists in the server
-- (void) checkInAppPurchases
-{
-    if ([SKPaymentQueue canMakePayments])
-    {
-        // Touch ID in-app purchase
-        NSSet *product_touchID = [NSSet setWithObject:IN_APP_PURCHASE_IDENTIFIER_TOUCH_ID];
-        SKProductsRequest *request_touchID = [[SKProductsRequest alloc]initWithProductIdentifiers:product_touchID];
-        request_touchID.delegate = self;
-        [request_touchID start];
-    }
-    else
-    {
-        NSLog(@"Can't make payments");
-    }
-}
-
-// delegate method coming from the "purchase options" view
-- (void)purchaseItem:(SKProduct *)productToPurchase
-{
-    if (productToPurchase)    // make sure product is not null
-    {
-        SKPayment *payment = [SKPayment paymentWithProduct:productToPurchase];
-        [defaultQueue addPayment:payment];
-    }
-    else
-        NSLog(@"product is null!");
-}
-
-- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
-{
-    for (SKPaymentTransaction *transaction in transactions)
-    {
-        NSLog(@"description = %@", transaction.description);
-        NSLog(@"transactionIdentifier = %@", transaction.transactionIdentifier);
-        
-        switch (transaction.transactionState)
-        {
-            case SKPaymentTransactionStatePurchased:
-                NSLog(@"in SKPaymentTransactionStatePurchased");
-                [self checkWhatItemWasPurchased];
-                [defaultQueue finishTransaction:transaction];
-                break;
-            case SKPaymentTransactionStateFailed:
-                NSLog(@"in SKPaymentTransactionStateFailed");
-                [defaultQueue finishTransaction:transaction];
-                break;
-            case SKPaymentTransactionStateRestored:
-                NSLog(@"in SKPaymentTransactionStateRestored");
-                [self checkWhatItemWasPurchased];
-                [defaultQueue restoreCompletedTransactions];
-                break;
-            default:
-                break;
-        }
-    }
-    [defaults synchronize];
-}
-
-- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
-{
-    arrayOfInAppProducts = response.products;
-    if ([arrayOfInAppProducts count] != 0)
-    {
-        product = [arrayOfInAppProducts objectAtIndex:0];   // for now...
-        NSLog(@"product Title = %@", product.localizedTitle);
-        NSLog(@"product Description = %@", product.localizedDescription);
-    }
-}
-
-- (void) checkWhatItemWasPurchased
-{
-    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
-}
-- (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
-{
-    NSLog(@"received restored transactions: %lu", (unsigned long)queue.transactions.count);
-    for (SKPaymentTransaction *transaction in queue.transactions)
-    {
-        NSString *productID = transaction.payment.productIdentifier;
-        if ([productID isEqualToString:@"com.eduardoflores.IDKeeper.enableTouchID"])
-        {
-            // verified that the purchase was for the touch ID option
-            [defaults setBool:YES forKey:KEY_IS_TOUCH_ID_PURCHASED];
-        }
-    }
-}
+//#pragma mark - In-App methods
+//// *** I KEEP THINKING THIS IS IN THE WRONG CLASS ***
+//// this begins a check of what products exists in the server
+//- (void) checkInAppPurchases
+//{
+//    if ([SKPaymentQueue canMakePayments])
+//    {
+//        // Touch ID in-app purchase
+//        NSSet *product_touchID = [NSSet setWithObject:IN_APP_PURCHASE_IDENTIFIER_TOUCH_ID];
+//        SKProductsRequest *request_touchID = [[SKProductsRequest alloc]initWithProductIdentifiers:product_touchID];
+//        request_touchID.delegate = self;
+//        [request_touchID start];
+//    }
+//    else
+//    {
+//        NSLog(@"Can't make payments");
+//    }
+//}
+//
+//// delegate method coming from the "purchase options" view
+//- (void)purchaseItem:(SKProduct *)productToPurchase
+//{
+//    if (productToPurchase)    // make sure product is not null
+//    {
+//        SKPayment *payment = [SKPayment paymentWithProduct:productToPurchase];
+//        [defaultQueue addPayment:payment];
+//    }
+//    else
+//        NSLog(@"product is null!");
+//}
+//
+//- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
+//{
+//    for (SKPaymentTransaction *transaction in transactions)
+//    {
+//        NSLog(@"description = %@", transaction.description);
+//        NSLog(@"transactionIdentifier = %@", transaction.transactionIdentifier);
+//        
+//        switch (transaction.transactionState)
+//        {
+//            case SKPaymentTransactionStatePurchased:
+//                NSLog(@"in SKPaymentTransactionStatePurchased");
+//                [self checkWhatItemWasPurchased];
+//                [defaultQueue finishTransaction:transaction];
+//                break;
+//            case SKPaymentTransactionStateFailed:
+//                NSLog(@"in SKPaymentTransactionStateFailed");
+//                [defaultQueue finishTransaction:transaction];
+//                break;
+//            case SKPaymentTransactionStateRestored:
+//                NSLog(@"in SKPaymentTransactionStateRestored");
+//                [self checkWhatItemWasPurchased];
+//                [defaultQueue restoreCompletedTransactions];
+//                break;
+//            default:
+//                break;
+//        }
+//    }
+//    [defaults synchronize];
+//}
+//
+//- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
+//{
+//    arrayOfInAppProducts = response.products;
+//    if ([arrayOfInAppProducts count] != 0)
+//    {
+//        product = [arrayOfInAppProducts objectAtIndex:0];   // for now...
+//        NSLog(@"product Title = %@", product.localizedTitle);
+//        NSLog(@"product Description = %@", product.localizedDescription);
+//    }
+//}
+//
+//- (void) checkWhatItemWasPurchased
+//{
+//    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+//}
+//- (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
+//{
+//    NSLog(@"received restored transactions: %lu", (unsigned long)queue.transactions.count);
+//    for (SKPaymentTransaction *transaction in queue.transactions)
+//    {
+//        NSString *productID = transaction.payment.productIdentifier;
+//        if ([productID isEqualToString:@"com.eduardoflores.IDKeeper.enableTouchID"])
+//        {
+//            // verified that the purchase was for the touch ID option
+//            [defaults setBool:YES forKey:KEY_IS_TOUCH_ID_PURCHASED];
+//        }
+//    }
+//}
 @end
 
 

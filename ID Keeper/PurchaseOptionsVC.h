@@ -9,16 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <StoreKit/StoreKit.h>
 
-@protocol PurchaseOptionsDelegate
-
-- (void) purchaseItem:(SKProduct *)product;
-
-@end
-
-@interface PurchaseOptionsVC : UIViewController
-
-@property (nonatomic, weak) NSArray *arrayOfInAppProducts;
-@property (nonatomic, weak) id<PurchaseOptionsDelegate> delegate;
+@interface PurchaseOptionsVC : UIViewController <SKPaymentTransactionObserver, SKProductsRequestDelegate>
+{
+    NSUserDefaults *defaults;
+    
+    SKPaymentQueue *defaultQueue;
+    SKProduct *inAppProduct;
+    BOOL IS_TOUCH_ID_PURCHASED;
+    NSArray *arrayOfInAppProducts;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *label_purchaseDescription;
 @property (weak, nonatomic) IBOutlet UILabel *label_purchaseTitle;
