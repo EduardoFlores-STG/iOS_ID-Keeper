@@ -12,6 +12,7 @@
 @interface NewCard_PreviewVC : UIViewController
 {
     MBProgressHUD *hud;
+    NSString *card_FileName;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

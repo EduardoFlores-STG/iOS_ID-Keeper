@@ -25,15 +25,24 @@
 
 - (NSString *) saveFileToLocalFilePath
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0]stringByAppendingString:
-                          [NSString stringWithFormat:@"%@_%@.png",
-                           self.card_name,
-                           self.card_issuer]];
+    card_FileName = [NSString stringWithFormat:@"%@_%@_%@.png",
+                     self.card_name,
+                     self.card_issuer,
+                     [NSDate date]];
     
-    [UIImagePNGRepresentation(imageTaken) writeToFile:filePath atomically:YES];
+    NSArray *arrayPaths =
+    NSSearchPathForDirectoriesInDomains(
+                                        NSDocumentDirectory,
+                                        NSUserDomainMask,
+                                        YES);
+    NSString *path = [arrayPaths objectAtIndex:0];
+    path = [path stringByAppendingString:@"/"];
+    path = [path stringByAppendingString:card_FileName];
     
-    return filePath;
+    [UIImagePNGRepresentation(imageTaken) writeToFile:path atomically:YES];
+    NSLog(@"path saved = %@", path);
+    
+    return path;
 }
 
 - (void) generateNewCoreDataCardWithFilePath:(NSString *)filePath
@@ -43,7 +52,7 @@
     card.card_name = self.card_name;
     card.card_issuer = self.card_issuer;
     card.card_type = self.card_type;
-    card.card_image_location = filePath;
+    card.card_image_location = card_FileName;
 }
 
 - (IBAction)button_saveCard:(id)sender

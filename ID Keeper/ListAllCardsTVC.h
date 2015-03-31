@@ -10,6 +10,9 @@
 #import <CoreData/CoreData.h>
 
 @interface ListAllCardsTVC : UITableViewController
+{
+    NSFileManager *fileManager;
+}
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 

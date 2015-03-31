@@ -9,6 +9,7 @@
 #import "ListAllCardsTVC.h"
 #import "CoreDataHelper.h"
 #import "Card.h"
+#import "CardListCell.h"
 
 @interface ListAllCardsTVC ()
 
@@ -27,6 +28,8 @@
     {
         NSLog(@"Cannot fetch fetchedResultsController. Error = %@", error);
     }
+    
+    fileManager = [NSFileManager defaultManager];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,16 +57,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellExistingCard" forIndexPath:indexPath];
+    CardListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellExistingCard" forIndexPath:indexPath];
     
     // Configure the cell...
     Card *card = [[self fetchedResultsController]objectAtIndexPath:indexPath];
-    cell.textLabel.text = card.card_name;
+    cell.label_cardName.text = card.card_name;
+    cell.label_cardIssuer.text = card.card_issuer;
+    
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:card.card_image_location];
+    if ( [fileManager fileExistsAtPath:filePath] )
+    {
+        cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:filePath]];
+        
+    }
     
     return cell;
 }
 
-// FIX THIS ISSUE LATER
+// FIX THIS ISSUE
 //- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 //{
 //    Card *card = [[self.fetchedResultsController sections]objectAtIndex:section];
