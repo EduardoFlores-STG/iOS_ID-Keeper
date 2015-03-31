@@ -12,8 +12,8 @@
 
 @interface CoreDataHelper : NSObject
 
-+ (NSManagedObjectContext *)getManagedObjectContext;
++ (NSManagedObjectContext *) getManagedObjectContext;
 + (NSError *) saveManagedObjectContext;
 + (NSArray *) fetchForEntityName:(NSString *)entityName;
-
++ (NSFetchedResultsController *)getFetchedResultsControllerWithEntityName:(NSString *)entityName sortKey:(NSString *)sortKey;
 @end

@@ -27,7 +27,7 @@
     return nil;
 }
 
-+(NSArray *)fetchForEntityName:(NSString *)entityName
++ (NSArray *)fetchForEntityName:(NSString *)entityName
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self getManagedObjectContext]];
@@ -37,4 +37,46 @@
     return [[self getManagedObjectContext] executeFetchRequest:fetchRequest error:&error];
 }
 
++ (NSFetchedResultsController *)getFetchedResultsControllerWithEntityName:(NSString *)entityName sortKey:(NSString *)sortKey
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:[self getManagedObjectContext]];
+    [fetchRequest setEntity:entity];
+    
+    // Specify how the fetched objects should be sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortKey
+    ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest
+                                                                                              managedObjectContext:[self getManagedObjectContext] sectionNameKeyPath:sortKey cacheName:nil];
+
+    return fetchedResultsController;
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

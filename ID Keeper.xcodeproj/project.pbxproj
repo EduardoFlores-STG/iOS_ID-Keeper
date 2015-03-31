@@ -32,6 +32,7 @@
 		A0838ED21AC5CC110049B2B2 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = A0838ED01AC5CC110049B2B2 /* checkmark.png */; };
 		A0838ED31AC5CC110049B2B2 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0838ED11AC5CC110049B2B2 /* checkmark@2x.png */; };
 		A0D590181AC9B8B5004EE678 /* ProgressDialogsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D590171AC9B8B5004EE678 /* ProgressDialogsHelper.m */; };
+		A0D5901C1AC9DA83004EE678 /* ListAllCardsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D5901B1AC9DA83004EE678 /* ListAllCardsTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		A0838ED11AC5CC110049B2B2 /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
 		A0D590161AC9B8B5004EE678 /* ProgressDialogsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressDialogsHelper.h; sourceTree = "<group>"; };
 		A0D590171AC9B8B5004EE678 /* ProgressDialogsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressDialogsHelper.m; sourceTree = "<group>"; };
+		A0D5901A1AC9DA83004EE678 /* ListAllCardsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListAllCardsTVC.h; sourceTree = "<group>"; };
+		A0D5901B1AC9DA83004EE678 /* ListAllCardsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListAllCardsTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,7 @@
 		A072B80F1AC49AF700B08788 /* ID Keeper */ = {
 			isa = PBXGroup;
 			children = (
+				A072B8101AC49AF700B08788 /* Supporting Files */,
 				A0D590151AC9B872004EE678 /* Helpers */,
 				A0D590141AC9B860004EE678 /* Frameworks */,
 				A072B8401AC4A1A900B08788 /* Images */,
@@ -139,15 +143,12 @@
 				A072B8151AC49AF700B08788 /* AppDelegate.m */,
 				A072B81D1AC49AF800B08788 /* Main.storyboard */,
 				A072B8221AC49AF800B08788 /* LaunchScreen.xib */,
-				A072B8101AC49AF700B08788 /* Supporting Files */,
 				A072B8451AC4A1CD00B08788 /* InitialViewController.h */,
 				A072B8461AC4A1CD00B08788 /* InitialViewController.m */,
+				A0D590191AC9DA4F004EE678 /* New Card */,
+				A0D5901D1AC9DA94004EE678 /* Show Cards */,
 				A072B84F1AC4AF1700B08788 /* PurchaseOptionsVC.h */,
 				A072B8501AC4AF1700B08788 /* PurchaseOptionsVC.m */,
-				A05B4C4D1AC4EA790099EFB4 /* NewCard_StartVC.h */,
-				A05B4C4E1AC4EA790099EFB4 /* NewCard_StartVC.m */,
-				A05B4C541AC4FE800099EFB4 /* NewCard_PreviewVC.h */,
-				A05B4C551AC4FE800099EFB4 /* NewCard_PreviewVC.m */,
 			);
 			path = "ID Keeper";
 			sourceTree = "<group>";
@@ -224,6 +225,26 @@
 				A0D590171AC9B8B5004EE678 /* ProgressDialogsHelper.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		A0D590191AC9DA4F004EE678 /* New Card */ = {
+			isa = PBXGroup;
+			children = (
+				A05B4C4D1AC4EA790099EFB4 /* NewCard_StartVC.h */,
+				A05B4C4E1AC4EA790099EFB4 /* NewCard_StartVC.m */,
+				A05B4C541AC4FE800099EFB4 /* NewCard_PreviewVC.h */,
+				A05B4C551AC4FE800099EFB4 /* NewCard_PreviewVC.m */,
+			);
+			name = "New Card";
+			sourceTree = "<group>";
+		};
+		A0D5901D1AC9DA94004EE678 /* Show Cards */ = {
+			isa = PBXGroup;
+			children = (
+				A0D5901A1AC9DA83004EE678 /* ListAllCardsTVC.h */,
+				A0D5901B1AC9DA83004EE678 /* ListAllCardsTVC.m */,
+			);
+			name = "Show Cards";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +369,7 @@
 				A05B4C4F1AC4EA790099EFB4 /* NewCard_StartVC.m in Sources */,
 				A072B8131AC49AF700B08788 /* main.m in Sources */,
 				A0D590181AC9B8B5004EE678 /* ProgressDialogsHelper.m in Sources */,
+				A0D5901C1AC9DA83004EE678 /* ListAllCardsTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
