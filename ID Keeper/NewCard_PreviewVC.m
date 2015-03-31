@@ -40,7 +40,6 @@
     path = [path stringByAppendingString:card_FileName];
     
     [UIImagePNGRepresentation(imageTaken) writeToFile:path atomically:YES];
-    NSLog(@"path saved = %@", path);
     
     return path;
 }

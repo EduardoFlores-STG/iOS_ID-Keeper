@@ -10,6 +10,7 @@
 #import "CoreDataHelper.h"
 #import "Card.h"
 #import "CardListCell.h"
+#import "CardDetailsVC.h"
 
 @interface ListAllCardsTVC ()
 
@@ -69,19 +70,26 @@
     if ( [fileManager fileExistsAtPath:filePath] )
     {
         cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:filePath]];
-        
     }
     
     return cell;
 }
 
-// FIX THIS ISSUE
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//    Card *card = [[self.fetchedResultsController sections]objectAtIndex:section];
-//    NSString *header = card.card_name;
-//    return header;
-//}
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    Card *card = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
+    return card.card_type;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // there's currently only 1 segue from here
+    CardDetailsVC *cdvc = [segue destinationViewController];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    Card *card = [[self fetchedResultsController]objectAtIndexPath:indexPath];
+    cdvc.card = card;
+}
 
 @end
 

@@ -360,6 +360,7 @@
                                     <outlet property="imageView" destination="Twi-D2-VDe" id="Hte-40-6XY"/>
                                     <outlet property="label_cardIssuer" destination="Udb-gJ-UkG" id="Mwp-go-QTA"/>
                                     <outlet property="label_cardName" destination="Yf9-dj-Kac" id="RGA-B9-XW1"/>
+                                    <segue destination="csm-ih-OaE" kind="show" id="BEd-Ff-9WT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -372,6 +373,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4F-G0-wcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1896" y="-108"/>
+        </scene>
+        <!--Card DetailsVC-->
+        <scene sceneID="bWZ-er-jft">
+            <objects>
+                <viewController id="csm-ih-OaE" customClass="CardDetailsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9se-vo-QhM"/>
+                        <viewControllerLayoutGuide type="bottom" id="xUg-db-tfV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nd8-BC-B8x">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fE-Iu-lrH">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="1fE-Iu-lrH" id="qA6-L0-eQm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9cm-yI-VbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2566.5" y="-108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sXD-yB-KPR">

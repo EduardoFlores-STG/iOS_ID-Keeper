@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A056E0A01ACB3E2800EAD274 /* CardDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A056E09F1ACB3E2800EAD274 /* CardDetailsVC.m */; };
 		A05B4C4F1AC4EA790099EFB4 /* NewCard_StartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B4C4E1AC4EA790099EFB4 /* NewCard_StartVC.m */; };
 		A05B4C561AC4FE800099EFB4 /* NewCard_PreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B4C551AC4FE800099EFB4 /* NewCard_PreviewVC.m */; };
 		A06B25491ACAFF1300216437 /* CardListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B25481ACAFF1300216437 /* CardListCell.m */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A056E09E1ACB3E2800EAD274 /* CardDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailsVC.h; sourceTree = "<group>"; };
+		A056E09F1ACB3E2800EAD274 /* CardDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailsVC.m; sourceTree = "<group>"; };
 		A05B4C4D1AC4EA790099EFB4 /* NewCard_StartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCard_StartVC.h; sourceTree = "<group>"; };
 		A05B4C4E1AC4EA790099EFB4 /* NewCard_StartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCard_StartVC.m; sourceTree = "<group>"; };
 		A05B4C541AC4FE800099EFB4 /* NewCard_PreviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCard_PreviewVC.h; sourceTree = "<group>"; };
@@ -244,10 +247,12 @@
 		A0D5901D1AC9DA94004EE678 /* Show Cards */ = {
 			isa = PBXGroup;
 			children = (
-				A0D5901A1AC9DA83004EE678 /* ListAllCardsTVC.h */,
-				A0D5901B1AC9DA83004EE678 /* ListAllCardsTVC.m */,
 				A06B25471ACAFF1300216437 /* CardListCell.h */,
 				A06B25481ACAFF1300216437 /* CardListCell.m */,
+				A0D5901A1AC9DA83004EE678 /* ListAllCardsTVC.h */,
+				A0D5901B1AC9DA83004EE678 /* ListAllCardsTVC.m */,
+				A056E09E1ACB3E2800EAD274 /* CardDetailsVC.h */,
+				A056E09F1ACB3E2800EAD274 /* CardDetailsVC.m */,
 			);
 			name = "Show Cards";
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				A0838EC91AC5C3B20049B2B2 /* MBProgressHUD.m in Sources */,
 				A05B4C4F1AC4EA790099EFB4 /* NewCard_StartVC.m in Sources */,
 				A072B8131AC49AF700B08788 /* main.m in Sources */,
+				A056E0A01ACB3E2800EAD274 /* CardDetailsVC.m in Sources */,
 				A0D590181AC9B8B5004EE678 /* ProgressDialogsHelper.m in Sources */,
 				A0D5901C1AC9DA83004EE678 /* ListAllCardsTVC.m in Sources */,
 			);
