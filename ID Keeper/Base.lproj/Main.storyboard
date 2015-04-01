@@ -385,7 +385,7 @@
             </objects>
             <point key="canvasLocation" x="1896" y="-108"/>
         </scene>
-        <!--Card DetailsVC-->
+        <!--Title-->
         <scene sceneID="bWZ-er-jft">
             <objects>
                 <viewController id="csm-ih-OaE" customClass="CardDetailsVC" sceneMemberID="viewController">
@@ -409,13 +409,54 @@
                             <constraint firstItem="xUg-db-tfV" firstAttribute="top" secondItem="1fE-Iu-lrH" secondAttribute="bottom" id="oHx-s6-Sf7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="CGm-zl-Ly0">
+                        <barButtonItem key="rightBarButtonItem" title="Barcode" id="67a-xQ-xT4">
+                            <connections>
+                                <action selector="button_showBarcode:" destination="csm-ih-OaE" id="CUj-s7-ju0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="buttonOutlet_showBarcode" destination="67a-xQ-xT4" id="2n1-0x-EC2"/>
                         <outlet property="imageView" destination="1fE-Iu-lrH" id="qA6-L0-eQm"/>
+                        <segue destination="rjl-Na-64J" kind="show" identifier="segueShowBarcode" id="6CJ-aH-z8h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cm-yI-VbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2566.5" y="-108"/>
+        </scene>
+        <!--Card BarcodeVC-->
+        <scene sceneID="aHn-dS-apk">
+            <objects>
+                <viewController id="rjl-Na-64J" customClass="CardBarcodeVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8dy-JM-9Pd"/>
+                        <viewControllerLayoutGuide type="bottom" id="fxf-v2-HHB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AQF-j9-VoP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u0Z-lj-nMy">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="u0Z-lj-nMy" secondAttribute="trailing" constant="-16" id="72q-ws-xyZ"/>
+                            <constraint firstItem="u0Z-lj-nMy" firstAttribute="leading" secondItem="AQF-j9-VoP" secondAttribute="leadingMargin" constant="-16" id="XV7-Ls-Kdf"/>
+                            <constraint firstItem="u0Z-lj-nMy" firstAttribute="top" secondItem="8dy-JM-9Pd" secondAttribute="bottom" constant="-64" id="daa-Uf-ufc"/>
+                            <constraint firstItem="fxf-v2-HHB" firstAttribute="top" secondItem="u0Z-lj-nMy" secondAttribute="bottom" id="wYU-dR-Ddo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="u0Z-lj-nMy" id="uu6-ox-SeI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qbd-bu-8JB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3235" y="-108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sXD-yB-KPR">

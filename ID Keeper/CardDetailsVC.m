@@ -7,6 +7,7 @@
 //
 
 #import "CardDetailsVC.h"
+#import "CardBarcodeVC.h"
 
 @interface CardDetailsVC ()
 
@@ -25,6 +26,12 @@
     {
         UIImage *imageRotated = [self rotateUIImage:[UIImage imageWithData:[NSData dataWithContentsOfFile:filePath]] clockwise:YES];
         self.imageView.image = imageRotated;
+    }
+    
+    self.buttonOutlet_showBarcode.enabled = NO;
+    if (true)   // check for barcode in-app purchase. Ignore for now
+    {
+        self.buttonOutlet_showBarcode.enabled = YES;
     }
 }
 
@@ -46,4 +53,62 @@
 }
 
 
+- (IBAction)button_showBarcode:(id)sender
+{
+    [self performSegueWithIdentifier:@"segueShowBarcode" sender:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // there's only 1 segue
+    CardBarcodeVC *cbvc = [segue destinationViewController];
+    cbvc.card = self.card;
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

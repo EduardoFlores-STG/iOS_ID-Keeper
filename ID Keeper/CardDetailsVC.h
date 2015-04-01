@@ -12,6 +12,9 @@
 @interface CardDetailsVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonOutlet_showBarcode;
+
+- (IBAction)button_showBarcode:(id)sender;
 
 @property (nonatomic, weak) Card *card;
 
