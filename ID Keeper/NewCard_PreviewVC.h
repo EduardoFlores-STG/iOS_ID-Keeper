@@ -7,12 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "MBProgressHUD.h"
 
-@interface NewCard_PreviewVC : UIViewController
+@interface NewCard_PreviewVC : UIViewController <UIAlertViewDelegate, AVCaptureMetadataOutputObjectsDelegate>
 {
     MBProgressHUD *hud;
     NSString *card_FileName;
+    
+    // barcode variables
+    AVCaptureSession *session;
+    AVCaptureDevice *device;
+    AVCaptureDeviceInput *input;
+    AVCaptureMetadataOutput *output;
+    AVCaptureVideoPreviewLayer *prevLayer;
+    NSString *barcode_type;
+    NSString *barcode_value;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

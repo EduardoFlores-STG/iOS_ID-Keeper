@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A00102AE1ACC8634007BC674 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = A00102AD1ACC8634007BC674 /* Card.m */; };
+		A00102B01ACC8A3F007BC674 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00102AF1ACC8A3F007BC674 /* AVFoundation.framework */; };
 		A056E0A01ACB3E2800EAD274 /* CardDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A056E09F1ACB3E2800EAD274 /* CardDetailsVC.m */; };
 		A05B4C4F1AC4EA790099EFB4 /* NewCard_StartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B4C4E1AC4EA790099EFB4 /* NewCard_StartVC.m */; };
 		A05B4C561AC4FE800099EFB4 /* NewCard_PreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B4C551AC4FE800099EFB4 /* NewCard_PreviewVC.m */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		A00102AC1ACC8634007BC674 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		A00102AD1ACC8634007BC674 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		A00102AF1ACC8A3F007BC674 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A056E09E1ACB3E2800EAD274 /* CardDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailsVC.h; sourceTree = "<group>"; };
 		A056E09F1ACB3E2800EAD274 /* CardDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailsVC.m; sourceTree = "<group>"; };
 		A05B4C4D1AC4EA790099EFB4 /* NewCard_StartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCard_StartVC.h; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00102B01ACC8A3F007BC674 /* AVFoundation.framework in Frameworks */,
 				A0838ECF1AC5C3D40049B2B2 /* CoreGraphics.framework in Frameworks */,
 				A0838ECD1AC5C3CC0049B2B2 /* UIKit.framework in Frameworks */,
 				A0838ECB1AC5C3C40049B2B2 /* Foundation.framework in Frameworks */,
@@ -213,6 +216,7 @@
 		A0D590141AC9B860004EE678 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A00102AF1ACC8A3F007BC674 /* AVFoundation.framework */,
 				A0838ECE1AC5C3D40049B2B2 /* CoreGraphics.framework */,
 				A0838ECC1AC5C3CC0049B2B2 /* UIKit.framework */,
 				A0838ECA1AC5C3C40049B2B2 /* Foundation.framework */,
