@@ -23,7 +23,8 @@
     NSString *filePath = [documentsPath stringByAppendingPathComponent:self.card.card_image_location];
     if ( [fileManager fileExistsAtPath:filePath] )
     {
-        self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:filePath]];
+        UIImage *imageRotated = [self rotateUIImage:[UIImage imageWithData:[NSData dataWithContentsOfFile:filePath]] clockwise:YES];
+        self.imageView.image = imageRotated;
         //self.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
     }
 }
@@ -32,6 +33,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIImage*)rotateUIImage:(UIImage*)sourceImage clockwise:(BOOL)clockwise
+{
+    CGSize size = sourceImage.size;
+    UIGraphicsBeginImageContext(CGSizeMake(size.height, size.width));
+    [[UIImage imageWithCGImage:[sourceImage CGImage] scale:1.0 orientation:clockwise ? UIImageOrientationRight : UIImageOrientationLeft] drawInRect:CGRectMake(0,0,size.height ,size.width)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 
