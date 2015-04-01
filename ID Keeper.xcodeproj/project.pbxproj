@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A00102AE1ACC8634007BC674 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = A00102AD1ACC8634007BC674 /* Card.m */; };
 		A056E0A01ACB3E2800EAD274 /* CardDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A056E09F1ACB3E2800EAD274 /* CardDetailsVC.m */; };
 		A05B4C4F1AC4EA790099EFB4 /* NewCard_StartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B4C4E1AC4EA790099EFB4 /* NewCard_StartVC.m */; };
 		A05B4C561AC4FE800099EFB4 /* NewCard_PreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B4C551AC4FE800099EFB4 /* NewCard_PreviewVC.m */; };
@@ -18,7 +19,6 @@
 		A072B8211AC49AF800B08788 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A072B8201AC49AF800B08788 /* Images.xcassets */; };
 		A072B8241AC49AF800B08788 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A072B8221AC49AF800B08788 /* LaunchScreen.xib */; };
 		A072B8301AC49AF800B08788 /* ID_KeeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A072B82F1AC49AF800B08788 /* ID_KeeperTests.m */; };
-		A072B83B1AC4A00400B08788 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = A072B83A1AC4A00400B08788 /* Card.m */; };
 		A072B83F1AC4A02B00B08788 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A072B83E1AC4A02B00B08788 /* CoreDataHelper.m */; };
 		A072B8431AC4A1B300B08788 /* icon_wallet.png in Resources */ = {isa = PBXBuildFile; fileRef = A072B8411AC4A1B300B08788 /* icon_wallet.png */; };
 		A072B8441AC4A1B300B08788 /* icon_write.png in Resources */ = {isa = PBXBuildFile; fileRef = A072B8421AC4A1B300B08788 /* icon_write.png */; };
@@ -48,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A00102AC1ACC8634007BC674 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		A00102AD1ACC8634007BC674 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		A056E09E1ACB3E2800EAD274 /* CardDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailsVC.h; sourceTree = "<group>"; };
 		A056E09F1ACB3E2800EAD274 /* CardDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailsVC.m; sourceTree = "<group>"; };
 		A05B4C4D1AC4EA790099EFB4 /* NewCard_StartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCard_StartVC.h; sourceTree = "<group>"; };
@@ -68,8 +70,6 @@
 		A072B8291AC49AF800B08788 /* ID KeeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ID KeeperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A072B82E1AC49AF800B08788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A072B82F1AC49AF800B08788 /* ID_KeeperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ID_KeeperTests.m; sourceTree = "<group>"; };
-		A072B8391AC4A00400B08788 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
-		A072B83A1AC4A00400B08788 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		A072B83D1AC4A02B00B08788 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		A072B83E1AC4A02B00B08788 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		A072B8411AC4A1B300B08788 /* icon_wallet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_wallet.png; sourceTree = "<group>"; };
@@ -189,8 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				A072B8171AC49AF800B08788 /* ID_Keeper.xcdatamodeld */,
-				A072B8391AC4A00400B08788 /* Card.h */,
-				A072B83A1AC4A00400B08788 /* Card.m */,
+				A00102AC1ACC8634007BC674 /* Card.h */,
+				A00102AD1ACC8634007BC674 /* Card.m */,
 				A072B83D1AC4A02B00B08788 /* CoreDataHelper.h */,
 				A072B83E1AC4A02B00B08788 /* CoreDataHelper.m */,
 			);
@@ -369,11 +369,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A072B83F1AC4A02B00B08788 /* CoreDataHelper.m in Sources */,
-				A072B83B1AC4A00400B08788 /* Card.m in Sources */,
 				A072B8511AC4AF1700B08788 /* PurchaseOptionsVC.m in Sources */,
 				A06B25491ACAFF1300216437 /* CardListCell.m in Sources */,
 				A05B4C561AC4FE800099EFB4 /* NewCard_PreviewVC.m in Sources */,
 				A072B8191AC49AF800B08788 /* ID_Keeper.xcdatamodeld in Sources */,
+				A00102AE1ACC8634007BC674 /* Card.m in Sources */,
 				A072B8471AC4A1CD00B08788 /* InitialViewController.m in Sources */,
 				A072B8161AC49AF700B08788 /* AppDelegate.m in Sources */,
 				A0838EC91AC5C3B20049B2B2 /* MBProgressHUD.m in Sources */,

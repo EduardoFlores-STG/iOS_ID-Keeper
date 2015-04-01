@@ -54,6 +54,9 @@
 {
     NSLog(@"Selected = %@", [[self arrayOfCardTypes]objectAtIndex:row]);
     self.pickerItemSelected = [[self arrayOfCardTypes]objectAtIndex:row];
+    
+    [[self textField_cardIssuer]resignFirstResponder];
+    [[self textField_cardName]resignFirstResponder];
 }
 
 - (IBAction)button_takePicture:(id)sender

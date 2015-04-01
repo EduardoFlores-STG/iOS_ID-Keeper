@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Card" representedClassName="Card" syncable="YES">
-        <attribute name="card_id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="card_image_location" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="card_issuer" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="card_name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="card_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="card_barcode_type" optional="YES" attributeType="String" defaultValueString="BARCODE_TYPE" syncable="YES"/>
+        <attribute name="card_barcode_value" optional="YES" attributeType="String" defaultValueString="BARCODE_VALUE" syncable="YES"/>
+        <attribute name="card_id" optional="YES" attributeType="String" defaultValueString="CARD_ID" syncable="YES"/>
+        <attribute name="card_image_location" optional="YES" attributeType="String" defaultValueString="CARD_IMAGE_LOCATION" syncable="YES"/>
+        <attribute name="card_issuer" optional="YES" attributeType="String" defaultValueString="CARD_ISSUER" syncable="YES"/>
+        <attribute name="card_name" optional="YES" attributeType="String" defaultValueString="CARD_NAME" syncable="YES"/>
+        <attribute name="card_type" optional="YES" attributeType="String" defaultValueString="CARD_TYPE" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Card" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

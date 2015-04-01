@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *label_cardName;
 @property (weak, nonatomic) IBOutlet UILabel *label_cardIssuer;
+@property (weak, nonatomic) IBOutlet UILabel *label_barcodeValue;
 
 - (IBAction)button_saveCard:(id)sender;
 

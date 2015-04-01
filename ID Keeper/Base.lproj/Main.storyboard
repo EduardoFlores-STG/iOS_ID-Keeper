@@ -281,15 +281,21 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARD NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="s4e-hy-KBb">
-                                <rect key="frame" x="16" y="450" width="568" height="21"/>
+                                <rect key="frame" x="16" y="450" width="568" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARD ISSUER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="L5E-uw-Wqp">
-                                <rect key="frame" x="16" y="479" width="568" height="21"/>
+                                <rect key="frame" x="16" y="478" width="568" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARCODE VALUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dx-B1-vfR">
+                                <rect key="frame" x="16" y="501" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -297,8 +303,10 @@
                         <constraints>
                             <constraint firstItem="iCH-P8-b7X" firstAttribute="trailing" secondItem="wi3-LR-Hsg" secondAttribute="trailingMargin" id="1Xl-ES-vZZ"/>
                             <constraint firstItem="s4e-hy-KBb" firstAttribute="top" secondItem="iCH-P8-b7X" secondAttribute="bottom" constant="8" id="2qA-Bz-zYN"/>
+                            <constraint firstItem="7dx-B1-vfR" firstAttribute="top" secondItem="L5E-uw-Wqp" secondAttribute="bottom" constant="2.5" id="G7e-dw-DAz"/>
                             <constraint firstItem="iCH-P8-b7X" firstAttribute="top" secondItem="VQj-e8-g84" secondAttribute="bottom" constant="8" id="GhQ-kT-SpV"/>
                             <constraint firstAttribute="centerX" secondItem="s4e-hy-KBb" secondAttribute="centerX" id="Hqa-wG-9kN"/>
+                            <constraint firstItem="7dx-B1-vfR" firstAttribute="trailing" secondItem="wi3-LR-Hsg" secondAttribute="trailingMargin" id="MSb-Vp-1NL"/>
                             <constraint firstItem="ezB-2w-SrU" firstAttribute="leading" secondItem="wi3-LR-Hsg" secondAttribute="leadingMargin" id="PS9-ib-Qsc"/>
                             <constraint firstItem="iCH-P8-b7X" firstAttribute="leading" secondItem="wi3-LR-Hsg" secondAttribute="leadingMargin" id="SCu-YM-sDR"/>
                             <constraint firstItem="L5E-uw-Wqp" firstAttribute="trailing" secondItem="wi3-LR-Hsg" secondAttribute="trailingMargin" id="XfX-ZD-Hm5"/>
@@ -306,15 +314,18 @@
                             <constraint firstItem="ezB-2w-SrU" firstAttribute="trailing" secondItem="wi3-LR-Hsg" secondAttribute="trailingMargin" id="Zn7-Ar-TFf"/>
                             <constraint firstItem="s4e-hy-KBb" firstAttribute="trailing" secondItem="wi3-LR-Hsg" secondAttribute="trailingMargin" id="fgu-Rx-fuH"/>
                             <constraint firstItem="s4e-hy-KBb" firstAttribute="leading" secondItem="wi3-LR-Hsg" secondAttribute="leadingMargin" id="jDR-s3-BqO"/>
+                            <constraint firstItem="7dx-B1-vfR" firstAttribute="leading" secondItem="wi3-LR-Hsg" secondAttribute="leadingMargin" id="lNA-cQ-hoT"/>
                             <constraint firstItem="UwF-lf-xtg" firstAttribute="top" secondItem="ezB-2w-SrU" secondAttribute="bottom" constant="8" id="qJj-uZ-FT3"/>
                             <constraint firstAttribute="centerX" secondItem="iCH-P8-b7X" secondAttribute="centerX" id="qmk-jA-IYH"/>
                             <constraint firstItem="L5E-uw-Wqp" firstAttribute="top" secondItem="s4e-hy-KBb" secondAttribute="bottom" constant="8" id="saW-yY-Bcp"/>
+                            <constraint firstAttribute="centerX" secondItem="7dx-B1-vfR" secondAttribute="centerX" id="u5H-r7-q4k"/>
                             <constraint firstAttribute="centerX" secondItem="ezB-2w-SrU" secondAttribute="centerX" id="vWn-jJ-2ZV"/>
                             <constraint firstAttribute="centerX" secondItem="L5E-uw-Wqp" secondAttribute="centerX" id="zkm-0C-p0S"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="iCH-P8-b7X" id="gQW-fF-Efy"/>
+                        <outlet property="label_barcodeValue" destination="7dx-B1-vfR" id="jYh-2x-3gq"/>
                         <outlet property="label_cardIssuer" destination="L5E-uw-Wqp" id="lDy-Ky-NNR"/>
                         <outlet property="label_cardName" destination="s4e-hy-KBb" id="UcG-k9-vRm"/>
                         <segue destination="0cf-Y3-KfN" kind="unwind" identifier="segueUnwindToInitialViewController" unwindAction="unwindToInitialViewController:" id="fEu-7x-7jZ"/>

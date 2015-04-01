@@ -21,6 +21,7 @@
     imageView.image = imageTaken;
     self.label_cardName.text = self.card_name;
     self.label_cardIssuer.text = self.card_issuer;
+    self.label_barcodeValue.text = @""; // start it empty
 }
 
 - (NSString *) saveFileToLocalFilePath

@@ -25,7 +25,6 @@
     {
         UIImage *imageRotated = [self rotateUIImage:[UIImage imageWithData:[NSData dataWithContentsOfFile:filePath]] clockwise:YES];
         self.imageView.image = imageRotated;
-        //self.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
     }
 }
 
