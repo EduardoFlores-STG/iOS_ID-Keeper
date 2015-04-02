@@ -10,6 +10,7 @@
 #import "CoreDataHelper.h"
 #import "Card.h"
 #import "ProgressDialogsHelper.h"
+#import "MacrosHelper.h"
 
 @implementation NewCard_PreviewVC
 @synthesize imageTaken, imageView;
@@ -23,7 +24,9 @@
     self.label_cardIssuer.text = self.card_issuer;
     self.label_barcodeValue.text = @""; // start it empty
     
-    if (true)   // need to check for barcode in-app purchase. Ignore for now and assume it has been purchased
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL isBarcodePurchased = [defaults objectForKey:KEY_IS_BARCODE_GENERATOR_PURCHASED];
+    if (isBarcodePurchased)   // need to check for barcode in-app purchase.
         [self displayPromptToUseBarcodeScanner];
 }
 

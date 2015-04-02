@@ -8,6 +8,7 @@
 
 #import "CardDetailsVC.h"
 #import "CardBarcodeVC.h"
+#import "MacrosHelper.h"
 
 @interface CardDetailsVC ()
 
@@ -29,7 +30,9 @@
     }
     
     self.buttonOutlet_showBarcode.enabled = NO;
-    if (true)   // check for barcode in-app purchase. Ignore for now
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL isBarcodePurchased = [defaults objectForKey:KEY_IS_BARCODE_GENERATOR_PURCHASED];
+    if (isBarcodePurchased)   // check for barcode in-app purchase.
     {
         self.buttonOutlet_showBarcode.enabled = YES;
     }

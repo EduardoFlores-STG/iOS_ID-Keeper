@@ -160,6 +160,11 @@
             // verified that the purchase was for the touch ID option
             [defaults setBool:YES forKey:KEY_IS_TOUCH_ID_PURCHASED];
         }
+        else if ([productID isEqualToString:IN_APP_PURCHASE_IDENTIFIER_BARCODE_GENERATOR])
+        {
+            [defaults setBool:YES forKey:KEY_IS_BARCODE_GENERATOR_PURCHASED];
+        }
+        [defaults synchronize];
     }
 }
 
