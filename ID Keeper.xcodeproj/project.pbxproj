@@ -60,6 +60,12 @@
 		A0838ED31AC5CC110049B2B2 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0838ED11AC5CC110049B2B2 /* checkmark@2x.png */; };
 		A0D590181AC9B8B5004EE678 /* ProgressDialogsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D590171AC9B8B5004EE678 /* ProgressDialogsHelper.m */; };
 		A0D5901C1AC9DA83004EE678 /* ListAllCardsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D5901B1AC9DA83004EE678 /* ListAllCardsTVC.m */; };
+		A0FFDE731ACDE77F0010435A /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = A0FFDE721ACDE77F0010435A /* barcode.png */; };
+		A0FFDE771ACDE8430010435A /* checklist_png.png in Resources */ = {isa = PBXBuildFile; fileRef = A0FFDE761ACDE8430010435A /* checklist_png.png */; };
+		A0FFDE791ACDE8CC0010435A /* card.png in Resources */ = {isa = PBXBuildFile; fileRef = A0FFDE781ACDE8CC0010435A /* card.png */; };
+		A0FFDE7B1ACDE98C0010435A /* images_png.png in Resources */ = {isa = PBXBuildFile; fileRef = A0FFDE7A1ACDE98C0010435A /* images_png.png */; };
+		A0FFDE7D1ACDEBB00010435A /* fingerprint.png in Resources */ = {isa = PBXBuildFile; fileRef = A0FFDE7C1ACDEBB00010435A /* fingerprint.png */; };
+		A0FFDE7F1ACDEC9E0010435A /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = A0FFDE7E1ACDEC9E0010435A /* camera.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +173,12 @@
 		A0D590171AC9B8B5004EE678 /* ProgressDialogsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressDialogsHelper.m; sourceTree = "<group>"; };
 		A0D5901A1AC9DA83004EE678 /* ListAllCardsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListAllCardsTVC.h; sourceTree = "<group>"; };
 		A0D5901B1AC9DA83004EE678 /* ListAllCardsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListAllCardsTVC.m; sourceTree = "<group>"; };
+		A0FFDE721ACDE77F0010435A /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
+		A0FFDE761ACDE8430010435A /* checklist_png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checklist_png.png; sourceTree = "<group>"; };
+		A0FFDE781ACDE8CC0010435A /* card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card.png; sourceTree = "<group>"; };
+		A0FFDE7A1ACDE98C0010435A /* images_png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images_png.png; sourceTree = "<group>"; };
+		A0FFDE7C1ACDEBB00010435A /* fingerprint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fingerprint.png; sourceTree = "<group>"; };
+		A0FFDE7E1ACDEC9E0010435A /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +340,7 @@
 		A072B8401AC4A1A900B08788 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A0FFDE7E1ACDEC9E0010435A /* camera.png */,
 				A0838ED01AC5CC110049B2B2 /* checkmark.png */,
 				A0838ED11AC5CC110049B2B2 /* checkmark@2x.png */,
 				A072B84C1AC4A66000B08788 /* touch_id_icon.png */,
@@ -335,6 +348,11 @@
 				A072B8411AC4A1B300B08788 /* icon_wallet.png */,
 				A072B8421AC4A1B300B08788 /* icon_write.png */,
 				A00102F81ACC96DB007BC674 /* icon_barcode.jpg */,
+				A0FFDE721ACDE77F0010435A /* barcode.png */,
+				A0FFDE761ACDE8430010435A /* checklist_png.png */,
+				A0FFDE781ACDE8CC0010435A /* card.png */,
+				A0FFDE7A1ACDE98C0010435A /* images_png.png */,
+				A0FFDE7C1ACDEBB00010435A /* fingerprint.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -476,10 +494,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A072B8441AC4A1B300B08788 /* icon_write.png in Resources */,
+				A0FFDE7B1ACDE98C0010435A /* images_png.png in Resources */,
+				A0FFDE7D1ACDEBB00010435A /* fingerprint.png in Resources */,
 				A072B81F1AC49AF800B08788 /* Main.storyboard in Resources */,
+				A0FFDE7F1ACDEC9E0010435A /* camera.png in Resources */,
+				A0FFDE731ACDE77F0010435A /* barcode.png in Resources */,
 				A072B8241AC49AF800B08788 /* LaunchScreen.xib in Resources */,
 				A0838ED21AC5CC110049B2B2 /* checkmark.png in Resources */,
+				A0FFDE791ACDE8CC0010435A /* card.png in Resources */,
 				A072B8211AC49AF800B08788 /* Images.xcassets in Resources */,
+				A0FFDE771ACDE8430010435A /* checklist_png.png in Resources */,
 				A072B8431AC4A1B300B08788 /* icon_wallet.png in Resources */,
 				A00102F91ACC96DB007BC674 /* icon_barcode.jpg in Resources */,
 				A0838ED31AC5CC110049B2B2 /* checkmark@2x.png in Resources */,

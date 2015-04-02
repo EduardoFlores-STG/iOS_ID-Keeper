@@ -31,7 +31,7 @@
     
     self.buttonOutlet_showBarcode.enabled = NO;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL isBarcodePurchased = [defaults objectForKey:KEY_IS_BARCODE_GENERATOR_PURCHASED];
+    BOOL isBarcodePurchased = [defaults boolForKey:KEY_IS_BARCODE_GENERATOR_PURCHASED];
     if (isBarcodePurchased)   // check for barcode in-app purchase.
     {
         self.buttonOutlet_showBarcode.enabled = YES;

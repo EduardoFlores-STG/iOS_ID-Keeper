@@ -25,7 +25,7 @@
     self.label_barcodeValue.text = @""; // start it empty
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL isBarcodePurchased = [defaults objectForKey:KEY_IS_BARCODE_GENERATOR_PURCHASED];
+    BOOL isBarcodePurchased = [defaults boolForKey:KEY_IS_BARCODE_GENERATOR_PURCHASED];
     if (isBarcodePurchased)   // need to check for barcode in-app purchase.
         [self displayPromptToUseBarcodeScanner];
 }
