@@ -14,15 +14,17 @@
     NSUserDefaults *defaults;
     
     SKPaymentQueue *defaultQueue;
-    SKProduct *inAppProduct;
     BOOL IS_TOUCH_ID_PURCHASED;
     NSArray *arrayOfInAppProducts;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *label_purchaseDescription;
 @property (weak, nonatomic) IBOutlet UILabel *label_purchaseTitle;
+@property (weak, nonatomic) IBOutlet UILabel *label_purchaseBarcodeDescription;
+@property (weak, nonatomic) IBOutlet UILabel *label_purchaseBarcodeTitle;
 
 - (IBAction)button_closeView:(id)sender;
 - (IBAction)button_purchaseTouchID:(id)sender;
+- (IBAction)button_purchaseBarcode:(id)sender;
 
 @end

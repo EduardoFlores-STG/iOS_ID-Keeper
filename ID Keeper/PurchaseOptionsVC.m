@@ -47,12 +47,32 @@
     }
 }
 
+- (IBAction)button_purchaseBarcode:(id)sender
+{
+    for (SKProduct *product in arrayOfInAppProducts)
+    {
+        if ([[product productIdentifier]isEqualToString:IN_APP_PURCHASE_IDENTIFIER_BARCODE_GENERATOR])
+        {
+            SKPayment *payment = [SKPayment paymentWithProduct:product];
+            [defaultQueue addPayment:payment];
+        }
+    }
+}
+
 - (void) setValuesForLabels
 {
     for (SKProduct *product in arrayOfInAppProducts)
     {
-        self.label_purchaseTitle.text = product.localizedTitle;
-        self.label_purchaseDescription.text = product.localizedDescription;
+        if ([[product productIdentifier]isEqualToString:IN_APP_PURCHASE_IDENTIFIER_TOUCH_ID])
+        {
+            self.label_purchaseTitle.text = product.localizedTitle;
+            self.label_purchaseDescription.text = product.localizedDescription;
+        }
+        else if ([[product productIdentifier]isEqualToString:IN_APP_PURCHASE_IDENTIFIER_BARCODE_GENERATOR])
+        {
+            self.label_purchaseBarcodeTitle.text = product.localizedTitle;
+            self.label_purchaseBarcodeDescription.text = product.localizedDescription;
+        }
     }
 }
 
@@ -67,6 +87,12 @@
         SKProductsRequest *request_touchID = [[SKProductsRequest alloc]initWithProductIdentifiers:product_touchID];
         request_touchID.delegate = self;
         [request_touchID start];
+        
+        // Barcode in-app purchase
+        NSSet *product_barcode = [NSSet setWithObject:IN_APP_PURCHASE_IDENTIFIER_BARCODE_GENERATOR];
+        SKProductsRequest *request_barcode = [[SKProductsRequest alloc]initWithProductIdentifiers:product_barcode];
+        request_barcode.delegate = self;
+        [request_barcode start];
     }
     else
     {
@@ -107,12 +133,14 @@
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
     arrayOfInAppProducts = response.products;
-    if ([arrayOfInAppProducts count] != 0)
-    {
-        inAppProduct = [arrayOfInAppProducts objectAtIndex:0];   // for now...
-        NSLog(@"product Title = %@", inAppProduct.localizedTitle);
-        NSLog(@"product Description = %@", inAppProduct.localizedDescription);
-    }
+//    if ([arrayOfInAppProducts count] != 0)
+//    {
+//        for (SKProduct *inAppProduct in arrayOfInAppProducts)
+//        {
+//            //NSLog(@"product Title = %@", inAppProduct.localizedTitle);
+//            //NSLog(@"product Description = %@", inAppProduct.localizedDescription);
+//        }
+//    }
     [self setValuesForLabels];
     [ProgressDialogsHelper removeAllProgressDialogsForView:self.view];
 }
@@ -127,7 +155,7 @@
     for (SKPaymentTransaction *transaction in queue.transactions)
     {
         NSString *productID = transaction.payment.productIdentifier;
-        if ([productID isEqualToString:@"com.eduardoflores.IDKeeper.enableTouchID"])
+        if ([productID isEqualToString:IN_APP_PURCHASE_IDENTIFIER_TOUCH_ID])
         {
             // verified that the purchase was for the touch ID option
             [defaults setBool:YES forKey:KEY_IS_TOUCH_ID_PURCHASED];
