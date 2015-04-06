@@ -10,6 +10,7 @@
 "ACCEPT" = "Accept";
 "CANCEL" = "Cancel";
 "OK" = "OK";
+"TRY_AGAIN" = "Try Again";
 "PLEASE_AUTHENTICATE" = "Please Authenticate";
 "CARD_NAME" = "Card Name";
 "CARD_ISSUER_PROMPT" = "Who issued this card?";
@@ -29,6 +30,10 @@
 "ENTER_CARD_NAME_CARD_ISSUER" = "You must enter the name of the card and who issued this card";
 "NO_CAMERA" = "No Camera";
 "NO_CAMERA_MESSAGE" = "There's no camera available on this device";
+"PAYMENT_FAILED" = "Cannot make payments";
+"PAYMENT_FAILED_DESCRIPTION" = "This application is unable to make payments at this time. Please try again later";
 
 // Errors
-"error_touchID_authentication" = "Error authenticating with TouchID";
+"ERROR_AUTHENTICATION" = "Authentication Error";
+"ERROR_AUTHENTICATING_TOUCHID" = "Error Authenticating with TouchID";
+"ERROR_FETCH" = "Error getting data from database";

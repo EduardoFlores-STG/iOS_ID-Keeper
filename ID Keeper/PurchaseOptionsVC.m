@@ -9,6 +9,7 @@
 #import "PurchaseOptionsVC.h"
 #import "MacrosHelper.h"
 #import "ProgressDialogsHelper.h"
+#import "AlertDialogsHelper.h"
 
 @implementation PurchaseOptionsVC
 
@@ -96,7 +97,10 @@
     }
     else
     {
-        NSLog(@"Can't make payments");
+        [AlertDialogsHelper showAlertDialogWithTitle:NSLocalizedString(@"PAYMENT_FAILED", nil)
+                                             message:NSLocalizedString(@"PAYMENT_FAILED_DESCRIPTION", nil)
+                                        buttonCancel:NSLocalizedString(@"OK", nil)
+                                            buttonOK:nil];
     }
 }
 
@@ -104,22 +108,22 @@
 {
     for (SKPaymentTransaction *transaction in transactions)
     {
-        NSLog(@"description = %@", transaction.description);
-        NSLog(@"transactionIdentifier = %@", transaction.transactionIdentifier);
+        //NSLog(@"description = %@", transaction.description);
+        //NSLog(@"transactionIdentifier = %@", transaction.transactionIdentifier);
         
         switch (transaction.transactionState)
         {
             case SKPaymentTransactionStatePurchased:
-                NSLog(@"in SKPaymentTransactionStatePurchased");
+                //NSLog(@"in SKPaymentTransactionStatePurchased");
                 [self checkWhatItemWasPurchased];
                 [defaultQueue finishTransaction:transaction];
                 break;
             case SKPaymentTransactionStateFailed:
-                NSLog(@"in SKPaymentTransactionStateFailed");
+                //NSLog(@"in SKPaymentTransactionStateFailed");
                 [defaultQueue finishTransaction:transaction];
                 break;
             case SKPaymentTransactionStateRestored:
-                NSLog(@"in SKPaymentTransactionStateRestored");
+                //NSLog(@"in SKPaymentTransactionStateRestored");
                 [self checkWhatItemWasPurchased];
                 [defaultQueue restoreCompletedTransactions];
                 break;
@@ -151,7 +155,7 @@
 }
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
 {
-    NSLog(@"received restored transactions: %lu", (unsigned long)queue.transactions.count);
+    //NSLog(@"received restored transactions: %lu", (unsigned long)queue.transactions.count);
     for (SKPaymentTransaction *transaction in queue.transactions)
     {
         NSString *productID = transaction.payment.productIdentifier;

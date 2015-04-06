@@ -11,6 +11,7 @@
 #import "Card.h"
 #import "CardListCell.h"
 #import "CardDetailsVC.h"
+#import "AlertDialogsHelper.h"
 
 @interface ListAllCardsTVC ()
 
@@ -27,7 +28,10 @@
     NSError *error = nil;
     if ( ![self.fetchedResultsController performFetch:&error])
     {
-        NSLog(@"Cannot fetch fetchedResultsController. Error = %@", error);
+        [AlertDialogsHelper showAlertDialogWithTitle:nil
+                                             message:NSLocalizedString(@"ERROR_FETCH", nil)
+                                        buttonCancel:NSLocalizedString(@"OK", nil)
+                                            buttonOK:nil];
     }
     
     fileManager = [NSFileManager defaultManager];

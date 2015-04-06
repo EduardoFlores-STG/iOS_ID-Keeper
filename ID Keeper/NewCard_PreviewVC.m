@@ -62,7 +62,8 @@
     if (input)
     {
         [session addInput:input];
-    } else {
+    } else
+    {
         NSLog(@"Error: %@", error);
     }
     

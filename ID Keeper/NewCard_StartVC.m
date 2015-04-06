@@ -59,7 +59,6 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    NSLog(@"Selected = %@", [[self arrayOfCardTypes]objectAtIndex:row]);
     self.pickerItemSelected = [[self arrayOfCardTypes]objectAtIndex:row];
     
     [[self textField_cardIssuer]resignFirstResponder];

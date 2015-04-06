@@ -9,6 +9,7 @@
 #import "InitialViewController.h"
 #import "MacrosHelper.h"
 #import <LocalAuthentication/LocalAuthentication.h>
+#import "AlertDialogsHelper.h"
 
 @interface InitialViewController ()
 
@@ -88,18 +89,20 @@
                           reply:^(BOOL success, NSError *error)
                 {
                     if (error)
-                        NSLog(@"Error authenticating with TouchID");
+                    {
+                        [AlertDialogsHelper showAlertDialogWithTitle:NSLocalizedString(@"ERROR_AUTHENTICATION", nil)
+                                                             message:NSLocalizedString(@"ERROR_AUTHENTICATING_TOUCHID", nil)
+                                                        buttonCancel:NSLocalizedString(@"CANCEL", nil)
+                                                            buttonOK:NSLocalizedString(@"TRY_AGAIN", nil)];
+                    }
                     if (success)
                     {
-                        NSLog(@"Succesfully authenticated with TouchID!");
                         // perform segue in main thread
                         dispatch_async(dispatch_get_main_queue(),
                             ^{
                                 [self performSegueWithIdentifier:@"segueShowCurrentIDs" sender:nil];
                             });
                     }
-                    else
-                        NSLog(@"Something bad happened when attempting to authenticate with TouchID");
                 }];
     }
     else
