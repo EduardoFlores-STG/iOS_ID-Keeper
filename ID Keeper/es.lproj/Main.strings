@@ -1,6 +1,21 @@
 
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "92d-H8-WQl"; */
-"92d-H8-WQl.normalTitle" = "Button";
+/* Class = "UILabel"; text = "Label"; ObjectID = "0Jy-wp-bW5"; */
+"0Jy-wp-bW5.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "1j1-3W-lvV"; */
+"1j1-3W-lvV.normalTitle" = "Close";
+
+/* Class = "UIBarButtonItem"; title = "Barcode"; ObjectID = "67a-xQ-xT4"; */
+"67a-xQ-xT4.title" = "Barcode";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6cD-KL-hJI"; */
+"6cD-KL-hJI.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "BARCODE VALUE"; ObjectID = "7dx-B1-vfR"; */
+"7dx-B1-vfR.text" = "BARCODE VALUE";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "CGm-zl-Ly0"; */
+"CGm-zl-Ly0.title" = "Title";
 
 /* Class = "UILabel"; text = "Enable Touch ID"; ObjectID = "JwO-0R-81q"; */
 "JwO-0R-81q.text" = "Enable Touch ID";
@@ -8,17 +23,29 @@
 /* Class = "UILabel"; text = "CARD TYPE"; ObjectID = "L2h-cz-zyl"; */
 "L2h-cz-zyl.text" = "CARD TYPE";
 
+/* Class = "UILabel"; text = "CARD ISSUER"; ObjectID = "L5E-uw-Wqp"; */
+"L5E-uw-Wqp.text" = "CARD ISSUER";
+
 /* Class = "UIButton"; normalTitle = "Purchase additional options!"; ObjectID = "LDa-Fb-xtO"; */
-"LDa-Fb-xtO.normalTitle" = "Compre opciones adicionales!";
+"LDa-Fb-xtO.normalTitle" = "Purchase additional options!";
 
 /* Class = "UILabel"; text = "CARD NAME"; ObjectID = "RV9-UX-VpM"; */
 "RV9-UX-VpM.text" = "CARD NAME";
 
+/* Class = "UILabel"; text = "CARD ISSUER"; ObjectID = "Udb-gJ-UkG"; */
+"Udb-gJ-UkG.text" = "CARD ISSUER";
+
+/* Class = "UILabel"; text = "Enable Touch ID"; ObjectID = "X6N-sL-nhV"; */
+"X6N-sL-nhV.text" = "Enable Touch ID";
+
+/* Class = "UILabel"; text = "CARD NAME"; ObjectID = "Yf9-dj-Kac"; */
+"Yf9-dj-Kac.text" = "CARD NAME";
+
 /* Class = "UILabel"; text = "Label"; ObjectID = "b5N-n9-gqv"; */
 "b5N-n9-gqv.text" = "Label";
 
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cc5-oP-8cN"; */
-"cc5-oP-8cN.normalTitle" = "Button";
+/* Class = "UIButton"; normalTitle = "Save Card"; ObjectID = "ezB-2w-SrU"; */
+"ezB-2w-SrU.normalTitle" = "Save Card";
 
 /* Class = "UILabel"; text = "CARD ISSUER"; ObjectID = "pCb-lP-XBG"; */
 "pCb-lP-XBG.text" = "CARD ISSUER";
@@ -28,3 +55,6 @@
 
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "rQ0-75-dUL"; */
 "rQ0-75-dUL.title" = "Title";
+
+/* Class = "UILabel"; text = "CARD NAME"; ObjectID = "s4e-hy-KBb"; */
+"s4e-hy-KBb.text" = "CARD NAME";

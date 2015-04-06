@@ -32,11 +32,11 @@
 
 - (void) displayPromptToUseBarcodeScanner
 {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Barcode Scanner"
-                                                   message:@"Do you want to scan the barcode of this card?"
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"BARCODE_SCANNER", nil)
+                                                   message:NSLocalizedString(@"BARCODE_SCAN_CARD_PROMPT", nil)
                                                   delegate:self
-                                         cancelButtonTitle:@"No"
-                                         otherButtonTitles:@"Yes", nil];
+                                         cancelButtonTitle:NSLocalizedString(@"NO", nil)
+                                         otherButtonTitles:NSLocalizedString(@"YES", nil), nil];
     [alert show];
 }
 
@@ -163,7 +163,7 @@
 - (IBAction)button_saveCard:(id)sender
 {
     // display "waiting" Progress dialog
-    [ProgressDialogsHelper showIndeterminateDialogForView:self.view withText:@"Saving card..."];
+    [ProgressDialogsHelper showIndeterminateDialogForView:self.view withText:NSLocalizedString(@"SAVING_CARD", nil)];
     
     //dispatch_queue_t saveQueue = dispatch_queue_create("SaveQueue", NULL);
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0),
@@ -194,7 +194,7 @@
 {
     float amountOfSecondsDisplayingSuccessDialog = 3.0f;
     
-    [ProgressDialogsHelper showSuccessDialogForView:self.view withText:@"Card Saved!"];
+    [ProgressDialogsHelper showSuccessDialogForView:self.view withText:NSLocalizedString(@"SAVED_CARD", nil)];
     
     // keep the view active for x amount of seconds
     [self performSelector:@selector(returnToInitialView)

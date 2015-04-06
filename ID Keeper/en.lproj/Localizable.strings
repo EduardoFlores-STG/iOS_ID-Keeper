@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  ID Keeper
+
+  Created by Eduardo Flores on 4/6/15.
+  Copyright (c) 2015 Eduardo Flores. All rights reserved.
+*/
+"YES" = "Yes";
+"NO" = "No";
+"ACCEPT" = "Accept";
+"CANCEL" = "Cancel";
+"OK" = "OK";
+"PLEASE_AUTHENTICATE" = "Please Authenticate";
+"CARD_NAME" = "Card Name";
+"CARD_ISSUER_PROMPT" = "Who issued this card?";
+"CARD_TYPE" = "Card Type";
+"FOOD" = "Food";
+"GOVERNMENT" = "Government";
+"GYM" = "Gym";
+"GROCERY_STORE" = "Grocery Store";
+"MOVIES" = "Movies";
+"OTHER" = "Other";
+"BARCODE_SCANNER" = "Barcode Scanner";
+"BARCODE_SCAN_CARD_PROMPT" = "Do you want to scan the barcode of this card?";
+"SAVING_CARD" = "Saving card...";
+"SAVED_CARD" = "Card Saved!";
+"DOWNLOADING_DATA" = "Downloading data...";
+"MISSING_FIELDS" = "Missing Fields";
+"ENTER_CARD_NAME_CARD_ISSUER" = "You must enter the name of the card and who issued this card";
+"NO_CAMERA" = "No Camera";
+"NO_CAMERA_MESSAGE" = "There's no camera available on this device";
+
+// Errors
+"error_touchID_authentication" = "Error authenticating with TouchID";

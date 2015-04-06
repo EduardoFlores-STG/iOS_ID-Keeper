@@ -17,7 +17,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [ProgressDialogsHelper showIndeterminateDialogForView:self.view withText:@"Downloading data..."];
+    [ProgressDialogsHelper showIndeterminateDialogForView:self.view withText:NSLocalizedString(@"DOWNLOADING_DATA", nil)];
     
     defaults = [NSUserDefaults standardUserDefaults];
     

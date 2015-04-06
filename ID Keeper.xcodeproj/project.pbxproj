@@ -33,6 +33,8 @@
 		A00102F61ACC9380007BC674 /* UIImage-NKDBarcode.m in Sources */ = {isa = PBXBuildFile; fileRef = A00102DF1ACC9380007BC674 /* UIImage-NKDBarcode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A00102F71ACC9380007BC674 /* UIImage-Normalize.m in Sources */ = {isa = PBXBuildFile; fileRef = A00102E11ACC9380007BC674 /* UIImage-Normalize.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A00102F91ACC96DB007BC674 /* icon_barcode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A00102F81ACC96DB007BC674 /* icon_barcode.jpg */; };
+		A0566A5D1AD3234E00F99E08 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0566A5F1AD3234E00F99E08 /* Localizable.strings */; };
+		A0566A631AD3279F00F99E08 /* AlertDialogsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0566A621AD3279F00F99E08 /* AlertDialogsHelper.m */; };
 		A056E0A01ACB3E2800EAD274 /* CardDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A056E09F1ACB3E2800EAD274 /* CardDetailsVC.m */; };
 		A05B4C4F1AC4EA790099EFB4 /* NewCard_StartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B4C4E1AC4EA790099EFB4 /* NewCard_StartVC.m */; };
 		A05B4C561AC4FE800099EFB4 /* NewCard_PreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B4C551AC4FE800099EFB4 /* NewCard_PreviewVC.m */; };
@@ -137,6 +139,12 @@
 		A00102E01ACC9380007BC674 /* UIImage-Normalize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Normalize.h"; sourceTree = "<group>"; };
 		A00102E11ACC9380007BC674 /* UIImage-Normalize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Normalize.m"; sourceTree = "<group>"; };
 		A00102F81ACC96DB007BC674 /* icon_barcode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_barcode.jpg; sourceTree = "<group>"; };
+		A0566A591AD3230E00F99E08 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		A0566A5A1AD3230E00F99E08 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A0566A5E1AD3234E00F99E08 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A0566A601AD3235100F99E08 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A0566A611AD3279F00F99E08 /* AlertDialogsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertDialogsHelper.h; sourceTree = "<group>"; };
+		A0566A621AD3279F00F99E08 /* AlertDialogsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertDialogsHelper.m; sourceTree = "<group>"; };
 		A056E09E1ACB3E2800EAD274 /* CardDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailsVC.h; sourceTree = "<group>"; };
 		A056E09F1ACB3E2800EAD274 /* CardDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailsVC.m; sourceTree = "<group>"; };
 		A05B4C4D1AC4EA790099EFB4 /* NewCard_StartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCard_StartVC.h; sourceTree = "<group>"; };
@@ -330,6 +338,7 @@
 		A072B8101AC49AF700B08788 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0566A5F1AD3234E00F99E08 /* Localizable.strings */,
 				A072B8111AC49AF700B08788 /* Info.plist */,
 				A072B8121AC49AF700B08788 /* main.m */,
 			);
@@ -406,6 +415,8 @@
 				A0838EC81AC5C3B20049B2B2 /* MBProgressHUD.m */,
 				A0D590161AC9B8B5004EE678 /* ProgressDialogsHelper.h */,
 				A0D590171AC9B8B5004EE678 /* ProgressDialogsHelper.m */,
+				A0566A611AD3279F00F99E08 /* AlertDialogsHelper.h */,
+				A0566A621AD3279F00F99E08 /* AlertDialogsHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -505,6 +516,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = A072B8041AC49AF700B08788;
 			productRefGroup = A072B80E1AC49AF700B08788 /* Products */;
@@ -524,6 +536,7 @@
 			files = (
 				A072B8441AC4A1B300B08788 /* icon_write.png in Resources */,
 				A0FFDE7B1ACDE98C0010435A /* images_png.png in Resources */,
+				A0566A5D1AD3234E00F99E08 /* Localizable.strings in Resources */,
 				A0FFDE7D1ACDEBB00010435A /* fingerprint.png in Resources */,
 				A0638F3B1ACE32D400A1A727 /* logo-iphone-app@3x.png in Resources */,
 				A072B81F1AC49AF800B08788 /* Main.storyboard in Resources */,
@@ -573,6 +586,7 @@
 				A00102AE1ACC8634007BC674 /* Card.m in Sources */,
 				A072B8471AC4A1CD00B08788 /* InitialViewController.m in Sources */,
 				A00102EA1ACC9380007BC674 /* NKDEAN13Barcode.m in Sources */,
+				A0566A631AD3279F00F99E08 /* AlertDialogsHelper.m in Sources */,
 				A072B8161AC49AF700B08788 /* AppDelegate.m in Sources */,
 				A00102F31ACC9380007BC674 /* NKDUPCABarcode.m in Sources */,
 				A00102EF1ACC9380007BC674 /* NKDModifiedPlesseyHexBarcode.m in Sources */,
@@ -620,10 +634,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A0566A5F1AD3234E00F99E08 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0566A5E1AD3234E00F99E08 /* en */,
+				A0566A601AD3235100F99E08 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		A072B81D1AC49AF800B08788 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A072B81E1AC49AF800B08788 /* Base */,
+				A0566A591AD3230E00F99E08 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -632,6 +656,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A072B8231AC49AF800B08788 /* Base */,
+				A0566A5A1AD3230E00F99E08 /* es */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

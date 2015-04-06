@@ -8,6 +8,7 @@
 
 #import "NewCard_StartVC.h"
 #import "NewCard_PreviewVC.h"
+#import "AlertDialogsHelper.h"
 
 @implementation NewCard_StartVC
 @synthesize label_cardIssuer, label_cardName, label_cardType;
@@ -25,19 +26,19 @@
 
 - (void) setValuesForUILabels
 {
-    label_cardName.text = @"Card Name";
-    label_cardIssuer.text = @"Who issued this card?";
-    label_cardType.text = @"Card Type";
+    label_cardName.text = NSLocalizedString(@"CARD_NAME", nil);
+    label_cardIssuer.text = NSLocalizedString(@"CARD_ISSUER_PROMPT", nil);
+    label_cardType.text = NSLocalizedString(@"CARD_TYPE", nil);
 }
 
 - (void) setValuesForArrayOfCardTypes
 {
-    self.arrayOfCardTypes = [NSArray arrayWithObjects:@"Food",
-                             @"Government",
-                             @"Gym",
-                             @"Grocery Store",
-                             @"Movies",
-                             @"Other",
+    self.arrayOfCardTypes = [NSArray arrayWithObjects:NSLocalizedString(@"FOOD", nil),
+                             NSLocalizedString(@"GOVERNMENT", nil),
+                             NSLocalizedString(@"GROCERY_STORE", nil),
+                             NSLocalizedString(@"GYM", nil),
+                             NSLocalizedString(@"MOVIES", nil),
+                             NSLocalizedString(@"OTHER", nil),
                              nil];
 }
 
@@ -65,27 +66,48 @@
     [[self textField_cardName]resignFirstResponder];
 }
 
+- (BOOL) isAllTextFieldsEntered
+{
+    if ([self.textField_cardName.text isEqualToString:@""] || [self.textField_cardIssuer.text isEqualToString:@""])
+        return NO;
+    else
+        return YES;
+}
+
 - (IBAction)button_takePicture:(id)sender
 {
-    // check if device has a camera
-    if ( [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == YES )
+    if ([self isAllTextFieldsEntered])
     {
-        // make this class as the delegate
-        imagePicker.delegate = self;
-        
-        // set the source to be the camera
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        
-        // limit this to only pictures, no video
-        imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-        
-        // show the imagepicker
-        [self presentViewController:imagePicker animated:YES completion:nil];
+        // check if device has a camera
+        if ( [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == YES )
+        {
+            // make this class as the delegate
+            imagePicker.delegate = self;
+            
+            // set the source to be the camera
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            
+            // limit this to only pictures, no video
+            imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+            
+            // show the imagepicker
+            [self presentViewController:imagePicker animated:YES completion:nil];
+        }
+        else
+        {
+            [AlertDialogsHelper showAlertDialogWithTitle:NSLocalizedString(@"NO_CAMERA", nil)
+                                                 message:NSLocalizedString(@"NO_CAMERA_MESSAGE", nil)
+                                            buttonCancel:NSLocalizedString(@"OK", nil)
+                                                buttonOK:nil];        }
     }
     else
     {
-        NSLog(@"This device does not have a camera!");
+        [AlertDialogsHelper showAlertDialogWithTitle:NSLocalizedString(@"MISSING_FIELDS", nil)
+                                             message:NSLocalizedString(@"ENTER_CARD_NAME_CARD_ISSUER", nil)
+                                        buttonCancel:NSLocalizedString(@"OK", nil)
+                                            buttonOK:nil];
     }
+
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info

@@ -84,7 +84,8 @@
     {
         // authenticate user
         [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
-                localizedReason:@"Please authenticate" reply:^(BOOL success, NSError *error)
+                localizedReason:NSLocalizedString(@"PLEASE_AUTHENTICATE", nil)
+                          reply:^(BOOL success, NSError *error)
                 {
                     if (error)
                         NSLog(@"Error authenticating with TouchID");
