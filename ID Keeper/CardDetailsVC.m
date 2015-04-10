@@ -20,6 +20,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     NSString *filePath = [documentsPath stringByAppendingPathComponent:self.card.card_image_location];

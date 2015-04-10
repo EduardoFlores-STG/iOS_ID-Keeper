@@ -32,6 +32,10 @@
 "NO_CAMERA_MESSAGE" = "There's no camera available on this device";
 "PAYMENT_FAILED" = "Cannot make payments";
 "PAYMENT_FAILED_DESCRIPTION" = "This application is unable to make payments at this time. Please try again later";
+"NO_CARDS" = "No Cards Found";
+"NO_CARDS_EXPLANATION" = "You haven't added any card yet. Please add a card to the this application and come back to see it in the list";
+"PURCHASE_OPTIONS" = "Purchase additional options!";
+"NEW_CARD" = "New Card";
 
 // Errors
 "ERROR_AUTHENTICATION" = "Authentication Error";

@@ -139,8 +139,8 @@
                                     <action selector="button_startNewID:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ypp-mr-Yde"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cc5-oP-8cN">
-                                <rect key="frame" x="199.5" y="309" width="200" height="200"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cc5-oP-8cN">
+                                <rect key="frame" x="199" y="309" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cc5-oP-8cN" secondAttribute="height" multiplier="1:1" id="Gck-LX-OJp"/>
                                     <constraint firstAttribute="height" constant="200" id="IMQ-q1-cWc"/>
@@ -154,8 +154,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDa-Fb-xtO">
-                                <rect key="frame" x="203" y="550" width="195" height="30"/>
-                                <state key="normal" title="Purchase additional options!">
+                                <rect key="frame" x="16" y="550" width="568" height="30"/>
+                                <state key="normal" title="PURCHASE ADDITIONAL OPTIONS">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -166,15 +166,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="92d-H8-WQl" secondAttribute="centerX" id="5CU-5J-0kh"/>
-                            <constraint firstAttribute="centerX" secondItem="LDa-Fb-xtO" secondAttribute="centerX" constant="-0.5" id="AO8-qN-auq"/>
                             <constraint firstAttribute="centerX" secondItem="cc5-oP-8cN" secondAttribute="centerX" id="Ej1-kt-xy6"/>
+                            <constraint firstItem="LDa-Fb-xtO" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="OdP-oA-hgJ"/>
+                            <constraint firstItem="LDa-Fb-xtO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Vd1-TR-IdI"/>
                             <constraint firstItem="cc5-oP-8cN" firstAttribute="top" secondItem="92d-H8-WQl" secondAttribute="bottom" constant="24" id="Xpc-XH-XGR"/>
                             <constraint firstItem="92d-H8-WQl" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="21" id="d5n-h3-4dZ"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="LDa-Fb-xtO" secondAttribute="bottom" constant="20" id="dVf-rb-hAp"/>
+                            <constraint firstAttribute="centerX" secondItem="LDa-Fb-xtO" secondAttribute="centerX" id="vqc-hZ-tPh"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="LDa-Fb-xtO" secondAttribute="bottom" constant="20" id="zv7-MP-W4t"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fKK-oE-tmw"/>
                     <connections>
+                        <outlet property="buttonOutlet_purchaseOptions" destination="LDa-Fb-xtO" id="5Qx-mq-aSC"/>
                         <segue destination="gQf-YR-yeM" kind="show" identifier="segueStartNewID" id="QGi-j9-LjA"/>
                         <segue destination="3I0-J5-d0z" kind="show" identifier="segueShowCurrentIDs" id="as4-Ti-lV9"/>
                         <segue destination="IxZ-GQ-Keb" kind="presentation" identifier="seguePurchaseOptions" id="baB-82-awx"/>
@@ -184,7 +187,7 @@
             </objects>
             <point key="canvasLocation" x="1178" y="-440"/>
         </scene>
-        <!--Title-->
+        <!--NEW CARD-->
         <scene sceneID="IzG-eR-Tny">
             <objects>
                 <viewController id="gQf-YR-yeM" customClass="NewCard_StartVC" sceneMemberID="viewController">
@@ -264,7 +267,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="rQ0-75-dUL">
+                    <navigationItem key="navigationItem" title="NEW CARD" id="rQ0-75-dUL">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="tL8-4S-nFD">
                             <connections>
                                 <action selector="button_takePicture:" destination="gQf-YR-yeM" id="fsN-b0-Dhr"/>
@@ -418,7 +421,7 @@
             </objects>
             <point key="canvasLocation" x="1896" y="-108"/>
         </scene>
-        <!--Title-->
+        <!--Card DetailsVC-->
         <scene sceneID="bWZ-er-jft">
             <objects>
                 <viewController id="csm-ih-OaE" customClass="CardDetailsVC" sceneMemberID="viewController">
@@ -442,7 +445,7 @@
                             <constraint firstItem="xUg-db-tfV" firstAttribute="top" secondItem="1fE-Iu-lrH" secondAttribute="bottom" id="oHx-s6-Sf7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="CGm-zl-Ly0">
+                    <navigationItem key="navigationItem" id="CGm-zl-Ly0">
                         <barButtonItem key="rightBarButtonItem" title="Barcode" id="67a-xQ-xT4">
                             <connections>
                                 <action selector="button_showBarcode:" destination="csm-ih-OaE" id="CUj-s7-ju0"/>

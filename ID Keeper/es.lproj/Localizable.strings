@@ -5,3 +5,39 @@
   Created by Eduardo Flores on 4/6/15.
   Copyright (c) 2015 Eduardo Flores. All rights reserved.
 */
+"YES" = "Si";
+"NO" = "No";
+"ACCEPT" = "Aceptar";
+"CANCEL" = "Cancelar";
+"OK" = "OK";
+"TRY_AGAIN" = "Inténtalo de nuevo";
+"PLEASE_AUTHENTICATE" = "Identifíquese por favor";
+"CARD_NAME" = "Nombre de Tarjeta";
+"CARD_ISSUER_PROMPT" = "¿Quien emitio esta tarjeta?";
+"CARD_TYPE" = "Tipo de Tarjeta";
+"FOOD" = "Comida";
+"GOVERNMENT" = "Gobierno";
+"GYM" = "Gimnasio";
+"GROCERY_STORE" = "Supermercado";
+"MOVIES" = "Cine y Peliculas";
+"OTHER" = "Otro";
+"BARCODE_SCANNER" = "Codigo de barras";
+"BARCODE_SCAN_CARD_PROMPT" = "¿Quiere escanear el codigo de barras de esta tarjeta?";
+"SAVING_CARD" = "Guardando tarjeta...";
+"SAVED_CARD" = "Tarjeta guardada!";
+"DOWNLOADING_DATA" = "Descargando informacion...";
+"MISSING_FIELDS" = "Falta informacion";
+"ENTER_CARD_NAME_CARD_ISSUER" = "Debe proveer la informacion del nombre de esta tarjeta y quien la emitio";
+"NO_CAMERA" = "Sin camara";
+"NO_CAMERA_MESSAGE" = "La camara no esta disponible en este aparato";
+"PAYMENT_FAILED" = "No se pueden hacer compras";
+"PAYMENT_FAILED_DESCRIPTION" = "Esta aplicacion no puede hacer compras en este momento. Por favor intentelo de nuevo mas tarde";
+"NO_CARDS" = "No hay tarjetas";
+"NO_CARDS_EXPLANATION" = "Usted aun no ha agregado ninguna tarjeta. Por favor, agregue una tarjeta a esta aplicacion y regrese a esta lista para ver sus tarjetas";
+"PURCHASE_OPTIONS" = "¡Compre opciones adicionales!";
+"NEW_CARD" = "Nueva tarjeta";
+
+// Errors
+"ERROR_AUTHENTICATION" = "Error de autentificacion";
+"ERROR_AUTHENTICATING_TOUCHID" = "Error autenticando con TouchID;
+"ERROR_FETCH" = "Error obteniendo informacion de la base de datos";

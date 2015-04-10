@@ -34,6 +34,18 @@
                                             buttonOK:nil];
     }
     
+    NSUInteger numberOfSections = [[[self fetchedResultsController]sections]count];
+    if (numberOfSections == 0)
+    {
+        // there are no cards in the DB yet
+        [AlertDialogsHelper showAlertDialogWithTitle:NSLocalizedString(@"NO_CARDS", nil)
+                                             message:NSLocalizedString(@"NO_CARDS_EXPLANATION", nil)
+                                        buttonCancel:NSLocalizedString(@"OK", nil)
+                                            buttonOK:nil];
+        // return to previous view
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
     fileManager = [NSFileManager defaultManager];
 }
 
@@ -92,6 +104,7 @@
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     Card *card = [[self fetchedResultsController]objectAtIndexPath:indexPath];
+    cdvc.navigationItem.title = card.card_name;
     cdvc.card = card;
 }
 

@@ -22,6 +22,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.buttonOutlet_purchaseOptions setTitle:NSLocalizedString(@"PURCHASE_OPTIONS", nil)
+                                       forState:UIControlStateNormal];
     defaults = [NSUserDefaults standardUserDefaults];
 }
 

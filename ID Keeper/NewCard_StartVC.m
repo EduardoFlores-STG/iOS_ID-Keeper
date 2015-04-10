@@ -18,6 +18,8 @@
 {
     [super viewDidLoad];
     
+    self.navigationItem.title = NSLocalizedString(@"NEW_CARD", nil);
+    
     [self setValuesForUILabels];
     [self setValuesForArrayOfCardTypes];
     

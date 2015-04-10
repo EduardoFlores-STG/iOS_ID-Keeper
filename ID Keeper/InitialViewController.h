@@ -15,6 +15,8 @@
     NSUserDefaults *defaults;
 }
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonOutlet_purchaseOptions;
+
 - (IBAction)button_startNewID:(id)sender;
 - (IBAction)button_showCurrentIDs:(id)sender;
 - (IBAction)button_purchaseOptions:(id)sender;
